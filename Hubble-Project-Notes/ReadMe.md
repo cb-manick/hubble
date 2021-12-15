@@ -18,6 +18,8 @@ Eg-We will not say we are integrating with RevLock, we will say we are enhancing
 
 # Key Architecture Decisions #
 * Solution will be built with multi tenant and multi organization hosting goal
+* Solution will be built using contract first approach to facilitate clear separation between components
+
 
 
 

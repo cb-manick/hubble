@@ -16,7 +16,7 @@ Eg-We will not say we are integrating with RevLock, we will say we are enhancing
 
 # Usecases #
 
-# Key Architecture Decisions#
+# Key Architecture Decisions #
 
 # System Diagram #
 

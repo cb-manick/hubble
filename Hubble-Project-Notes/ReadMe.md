@@ -11,12 +11,17 @@ Eg-We will not say we are integrating with RevLock, we will say we are enhancing
 * Capability Interfaces are most of the time backward compatible, are versioned and promotes selectivity  
 * We will use the above principles for evaluation Commercial Off the Shelf (COTS) as well.
 
-### Overall Comtext ###
+### Overall Context ###
 ![image](./images/01-hubble-overall-context.png "Context")
 
 # Usecases #
 
 # Key Architecture Decisions #
+* Solution will be built with multi tenant and multi organization hosting goal
+
+
+
+
 
 # System Diagram #
 

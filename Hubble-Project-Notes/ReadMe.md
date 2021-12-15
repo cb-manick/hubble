@@ -9,9 +9,22 @@ Eg-We will not say we are integrating with RevLock, we will say we are enhancing
 * Capabilities expressed hides the implementation details. There can be multiple implementation for the same capability
 * We measure inconvenience in terms of our in adaptability to change or too many changes because of  underlying implementation. Higher the inconvenience further we are from the goal!
 * Capability Interfaces are most of the time backward compatible, are versioned and promotes selectivity  
+* We will use the above principles for evaluation Commercial Off the Shelf (COTS) as well.
+
+### Overall Comtext ###
+![image](./images/01-hubble-overall-context.png "Context")
 
 # Usecases #
 
+# Key Architecture Decisions#
+
+# System Diagram #
+
+## Components ##
+
+# List of Proof Of Concept #
+
+# Plan Of Attack - RoadMap #
 
 
 

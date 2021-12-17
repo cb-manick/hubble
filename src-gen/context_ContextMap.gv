@@ -1,0 +1,40 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="/var/folders/d9/gx4kgjmn71qcjdmyv8dy814c0000gp/T/GraphvizJava"]
+"Certification" ["margin"="0.3","orientation"="304","shape"="egg","fontsize"="16","style"="bold","label"="Certification\n","fontname"="sans-serif"]
+"Provider" ["margin"="0.3","orientation"="2","shape"="egg","fontsize"="16","style"="bold","label"="Provider\n","fontname"="sans-serif"]
+"MerchantCapabilityManagement" ["margin"="0.3","orientation"="257","shape"="egg","fontsize"="16","style"="bold","label"="MerchantCapabilityManagement\n","fontname"="sans-serif"]
+"SchemaRegistry" ["margin"="0.3","orientation"="173","shape"="egg","fontsize"="16","style"="bold","label"="SchemaRegistry\n","fontname"="sans-serif"]
+"SpecificationDSL" ["margin"="0.3","orientation"="214","shape"="egg","fontsize"="16","style"="bold","label"="SpecificationDSL\n","fontname"="sans-serif"]
+"SpecificationSDK" ["margin"="0.3","orientation"="129","shape"="egg","fontsize"="16","style"="bold","label"="SpecificationSDK\n","fontname"="sans-serif"]
+"SpecificationRepository" ["margin"="0.3","orientation"="331","shape"="egg","fontsize"="16","style"="bold","label"="SpecificationRepository\n","fontname"="sans-serif"]
+"Certification" -> "Provider" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>OHS, PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"Provider" -> "MerchantCapabilityManagement" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>OHS, PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"SchemaRegistry" -> "SpecificationDSL" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>CF</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"SpecificationDSL" -> "SpecificationSDK" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>CF</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"SpecificationSDK" -> "Certification" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>CF</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"SpecificationRepository" -> "Certification" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>OHS, PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+}

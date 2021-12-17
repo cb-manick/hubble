@@ -45,6 +45,8 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 # Context #
 
 ![image](./images/02-hubble-context.png "Context")
+# Context Mapping #
+![image](./images/03-hubble-contextmap.png "Context Map")
 
 ## Points of Delibration ##
 * ___*Specification and Certification in separate Context vs Same Context*___. Specification Context is all about providing support for writing specification. This involves providing support to define a capability. Certification context needs provide support on certificing a provider on whether he is adhering to the Specification. Relationship between them is *partnership
@@ -60,6 +62,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 # List of Proof Of Concept #
 
 </p>
+
 # Plan Of Attack - RoadMap #
 
 

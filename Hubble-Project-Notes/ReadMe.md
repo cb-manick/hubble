@@ -30,9 +30,9 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 # Key Architecture Decisions #
 
-* Multi tenant
-* Automation and Validation first
-* System should is expected to make progress to recover from failures
+* Multi tenant/Entity and Multi Cloud
+* Automation first
+* System is expected to make progress to recover from failures
 * Systems fail in isolation and does not cascade failure
 * System is observable under  all circumstance.
 
@@ -48,7 +48,11 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 
 ## Points of Delibration ##
-* ___*Specification and Certification in separate Context vs Same Context*___. Specification Context is all about providing support for writing specification. This involves providing support to define a capability. Certification context needs provide support on certificing a provider on whether he is adhering to the Specification. Relationship between them is *partnership
+
+
+* ___*Specification and Certification in separate Context vs Same Context*___. Specification Context is all about providing support for writing specification. This involves providing support to define a capability. Certification context needs provide support on certifying a provider on whether he is adhering to the Specification. Relationship between them is **partnership
+
+
 
 # System Diagram #
 
@@ -57,6 +61,8 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 ## Components ##
 
 </p>
+
+## Capability Specification ##
 
 # List of Proof Of Concept #
 

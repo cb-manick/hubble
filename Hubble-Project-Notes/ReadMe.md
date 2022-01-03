@@ -53,6 +53,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 ## Shopify ##
 ## Tax Provider ##
+## Wordpress plugin Mode ##
 
 # Extensibility Pattern #
 

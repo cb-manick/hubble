@@ -28,9 +28,17 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 # Scenarios #
 
-## Invoice Pdf Generation - Externalization ##
+## Invoice - Pdf Generation - Externalization ##
 
 ## Tax Providers ##
+
+* Merchant Configures Nexus. 
+* Merchant can mark a Customer as exempt from tax or not
+* Merchant Adds a TaxCode for Line Item based on which tax provider calculates the tax. Product Catalog to tax Calculation mapping
+* Merchant configures details to connect to the customer
+* Some Providers support Tax Invoice Sync
+
+
 
 ## Payment Gateway ## 
 
@@ -38,7 +46,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 * Multi tenant/Entity and Multi Cloud
 * Should be self hosted Extensibility layer should be easier for Main  Apps to consume through simple set of sdks (frontend/backend)
-* Automation first
+* Automation and API first
 * System is expected to make progress to recover from failures
 * Systems fail in isolation and does not cascade failure
 * System is observable under  all circumstance.

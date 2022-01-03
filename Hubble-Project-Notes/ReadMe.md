@@ -29,7 +29,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 # Scenarios #
 
 ## Invoice - Pdf Generation - Externalization ##
-
+## Notification ##
 ## Tax Providers ##
 
 * Merchant Configures Nexus. Nexus are generally pincode for which tax calculation needed not be done.
@@ -37,9 +37,23 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 * Merchant Adds a TaxCode for Line Item based on which tax provider calculates the tax. Product Catalog to tax Calculation mapping
 * Merchant configures details to connect to the customer
 * Some Providers support Tax Invoice Sync
+* Merchant Configures the credential to connect with provider
 
+## Shipment ##
 
 ## Payment Gateway ## 
+
+# Extensibility Pattern #
+
+## Sync Function Provider ##
+## Async Function Provider ##
+## Async Function Provider via Event Consumption ##
+## Async Function Provider with Result Update #
+## Provider with Meta Data Provisioning ## 
+## Supporting Domain Provider ##
+## Provider with Hosted Functions ##
+## Encapsulating Provider ##
+
 
 # Key Architecture Decisions #
 

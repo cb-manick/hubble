@@ -32,12 +32,11 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 ## Tax Providers ##
 
-* Merchant Configures Nexus. 
+* Merchant Configures Nexus. Nexus are generally pincode for which tax calculation needed not be done.
 * Merchant can mark a Customer as exempt from tax or not
 * Merchant Adds a TaxCode for Line Item based on which tax provider calculates the tax. Product Catalog to tax Calculation mapping
 * Merchant configures details to connect to the customer
 * Some Providers support Tax Invoice Sync
-
 
 
 ## Payment Gateway ## 

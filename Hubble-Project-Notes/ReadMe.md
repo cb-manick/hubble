@@ -35,10 +35,11 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 ** What needs to be done when logo changes freshdesk vs freshworks ** 
 
 ## Notification ##
+
 ## Tax Providers ##
 
 * Merchant Configures Nexus. Nexus are generally pincode for which tax calculation needed not be done.
-* Merchant can mark a Customer as exempt from tax or not
+* Merchant can mark a Customer as exempt from tax or not. A specic exemption code is configured for the merchant.
 * Merchant Adds a TaxCode for Line Item based on which tax provider calculates the tax. Product Catalog to tax Calculation mapping
 * Merchant configures details to connect to the customer
 * Some Providers support Tax Invoice Sync
@@ -47,6 +48,11 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 ## Shipment ##
 
 ## Payment Gateway ## 
+
+# Case Studies #
+
+## Shopify ##
+## Tax Provider ##
 
 # Extensibility Pattern #
 
@@ -62,6 +68,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 # Key Architecture Decisions #
 
+* Multi platform - chargebee, numberz etc.
 * Multi tenant/Entity and Multi Cloud
 * Should be self hosted Extensibility layer should be easier for Main  Apps to consume through simple set of sdks (frontend/backend)
 * Automation and API first

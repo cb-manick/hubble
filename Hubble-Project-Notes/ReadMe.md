@@ -26,18 +26,25 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 ### Overall Context ###
 ![image](./images/01-hubble-overall-context.png "Context")
 
-# Usecases #
+# Scenarios #
+
+## Invoice Pdf Generation - Externalization ##
+
+## Tax Providers ##
+
+## Payment Gateway ## 
 
 # Key Architecture Decisions #
 
 * Multi tenant/Entity and Multi Cloud
+* Should be self hosted Extensibility layer should be easier for Main  Apps to consume through simple set of sdks (frontend/backend)
 * Automation first
 * System is expected to make progress to recover from failures
 * Systems fail in isolation and does not cascade failure
 * System is observable under  all circumstance.
 
 
-
+# 
 
 
 </p>

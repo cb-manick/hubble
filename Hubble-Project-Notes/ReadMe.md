@@ -29,6 +29,11 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 # Scenarios #
 
 ## Invoice - Pdf Generation - Externalization ##
+* Merchant configures logo
+* Merchant configures Note
+* Merchant configures Payment Instruction in terms of due payment
+** What needs to be done when logo changes freshdesk vs freshworks ** 
+
 ## Notification ##
 ## Tax Providers ##
 
@@ -52,7 +57,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 ## Provider with Meta Data Provisioning ## 
 ## Supporting Domain Provider ##
 ## Provider with Hosted Functions ##
-## Encapsulating Provider ##
+## Adorning Provider ##
 
 
 # Key Architecture Decisions #

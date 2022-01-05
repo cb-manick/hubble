@@ -1,7 +1,8 @@
 @startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: Another authentication Response
+Ux:ViewPdf -> ViewPdfInvoiceAction:callLogic
+ViewPdfInvoiceAction:callLogic -> Invoice:get
+ViewPdfInvoiceAction:callLogic -> ViewPdfInvoiceAction:viewPdf
+ViewPdfInvoiceAction:viewPdf -> InvoiceUtil.getPdfContent
+InvoiceUtil.getPdfContent --> ViewPdfInvoiceAction:viewPdf
+ViewPdfInvoiceAction:viewPdf --> Ux:ViewPdf
 @enduml

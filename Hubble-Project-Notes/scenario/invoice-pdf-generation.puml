@@ -1,8 +1,14 @@
 @startuml
 Ux:ViewPdf -> ViewPdfInvoiceAction:callLogic
+
 ViewPdfInvoiceAction:callLogic -> Invoice:get
 ViewPdfInvoiceAction:callLogic -> ViewPdfInvoiceAction:viewPdf
 ViewPdfInvoiceAction:viewPdf -> InvoiceUtil.getPdfContent
 InvoiceUtil.getPdfContent --> ViewPdfInvoiceAction:viewPdf
+ViewPdfInvoiceAction:viewPdf --> UtilityClient.createPdf
 ViewPdfInvoiceAction:viewPdf --> Ux:ViewPdf
+SendEmailInvoiceJob -> InvoiceUtil.getPdfContent
+SendEmailInvoiceJob -> SendNotificationEmail:sendInvoiceMail
+SendNotificationEmail:sendInvoiceMail --> UtilityClient.createPdf
+
 @enduml

@@ -35,6 +35,8 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 ** What needs to be done when logo changes freshdesk vs freshworks ** 
 
 ![image](./images/04-invoice-pdf-generation.png)
+### Ways to Solve ###
+* Curren
 
 ## Notification ##
 

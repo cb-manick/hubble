@@ -1,0 +1,24 @@
+{
+  
+    "$id": "https://hubble.io/schemas/0.1/specification.json",
+    "$schema": "http://json-schema.org/draft-01/schema#",
+    "description": "Capability specification",
+    "type":"object",
+    "properties":{
+        "id": {
+        "type": "string",
+        "description": "Capability Specification unique identifier",
+        "minLength": 1,
+        "requires": true
+      },
+      "features": {
+        "$ref" : "features.json#/features"
+      },
+      "version" : {
+          "type" : "string",
+          "description" : "Unique version for capability"
+      }
+
+    }
+}
+

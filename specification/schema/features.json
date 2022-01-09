@@ -1,0 +1,64 @@
+{
+  "$id": "https://hubble.io/schemas/0.1/features.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Specification - feature schema",
+  "type": "object" ,
+  "features": {
+    "oneOf": [
+      {
+        "type": "string",
+        "format": "uri",
+        "description": "URI to a resource containing feature definitions (json or yaml)",
+        "minLength": 1
+      },
+      {
+        "type": "array",
+        "description": "Capability specification feature definitions",
+        "items": {
+          "$ref": "#/definitions/featureDefinition"
+        },
+        "minItems": 1
+      }],
+      "id" : {
+        "type": "string",
+        "description": "feature unique identifier",
+        "minLength": 1
+      }
+  },
+  "definitions": {
+    "featureDefinition": {
+    "oneOf": [
+      {
+        "type": "string",
+        "format" : "uri",
+        "description": "URI to a resource containing feature definition",
+        "minLength": 1
+      },
+      {
+        "type": "object",
+        "properties": {
+          "duration": {
+            "type": "string",
+            "description": "Workflow execution timeout duration (ISO 8601 duration format). If not specified should be 'unlimited'",
+            "minLength": 1
+          },
+          "interrupt": {
+            "type": "boolean",
+            "description": "If `false`, workflow instance is allowed to finish current execution. If `true`, current workflow execution is abrupted.",
+            "default": true
+          },
+          "runBefore": {
+            "type": "string",
+            "description": "Name of a workflow state to be executed before workflow instance is terminated",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "duration"
+        ]
+      }
+    ]
+  }
+}
+}

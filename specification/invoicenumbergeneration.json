@@ -1,0 +1,7 @@
+{
+    "$schema": "./schema/specification.json",
+    "version" : "0.0.0.1",
+    "features": [{
+
+    }]
+}

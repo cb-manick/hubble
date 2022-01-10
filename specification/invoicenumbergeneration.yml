@@ -1,3 +1,4 @@
+---
 "$schema": "./schema/specification.json"
 version: 0.0.0.1
 id: https://hubble.io/invoice/
@@ -32,3 +33,5 @@ environment:
     host: https://www.allinvoices-test.com/
   integration:
     host: https://www.allinvoices-int.com/
+scenario:
+  id: scenario1

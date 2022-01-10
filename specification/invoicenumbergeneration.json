@@ -47,5 +47,7 @@
         "host":"https://www.allinvoices-int.com/"
     }
 
-  }
+  },"scenario": {
+    "id": "scenario1"
+   }
 }

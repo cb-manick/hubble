@@ -11,9 +11,7 @@
         "minLength": 1,
         "format": "uri"
       },
-      "features": {
-        "$ref" : "features.json#/features"
-      },
+
       "version" : {
           "type" : "string",
           "description" : "Unique version for capability"
@@ -21,8 +19,10 @@
         "$ref" : "connect.json#/connectConfig"
       },"connectBackConfig" : {
         "$ref" : "connect.json#/connectConfig"
+      },
+      "features": {
+        "$ref" : "features.json#/features"
       }
-
     }
 }
 

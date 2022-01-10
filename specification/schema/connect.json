@@ -10,6 +10,23 @@
     },
     "headers": {
       "$ref": "#/definitions/header"
+    },
+    "instrumentation": {
+      "$ref": "#/definitions/instrumentation"
+    },
+    "scenario": {
+      "$ref": "#/definitions/scenario"
+    },
+    "environment": {
+      "live": {
+        "$ref": "#/definitions/environment"
+      },
+      "test": {
+        "$ref": "#/definitions/environment"
+      },
+      "integration": {
+        "$ref": "#/definitions/environment"
+      }
     }
   },
   "definitions": {
@@ -47,6 +64,32 @@
         "value": {
           "type": "string",
           "minLength": 1
+        }
+      }
+    },
+    "instrumentation": {
+      "type": "object",
+      "properties": {
+        "traceId": {
+          "type": "string"
+        }
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "host" : {
+          "type": "string",
+          "format": "uri"
         }
       }
     }

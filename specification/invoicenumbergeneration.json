@@ -22,11 +22,30 @@
     }
   ],
   "connectConfig": {
-      "auth": "auth",
-      "headerName": "auth-header"
+    "auth": "oauth",
+    "headerName": "auth-header"
   },
   "connectBackConfig": {
-      "auth": "apikey",
-      "headerName": "auth-header"
+    "auth": "apikey",
+    "headerName": "auth-header"
+  },
+  "headers": [
+    {
+      "key": "x-provide",
+      "value": "value"
+    }
+  ],
+  "instrumentation": {
+      "traceId": "xxx-sdfd-sdfag1"
+  },"environment": {
+    "live": {
+        "host":"https://www.allinvoices.com/"
+    },"test": {
+        "host":"https://www.allinvoices-test.com/"
+    },
+    "integration": {
+        "host":"https://www.allinvoices-int.com/"
+    }
+
   }
 }

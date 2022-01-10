@@ -9,7 +9,7 @@
         "type": "string",
         "description": "Capability Specification unique identifier",
         "minLength": 1,
-        "requires": true
+        "format": "uri"
       },
       "features": {
         "$ref" : "features.json#/features"

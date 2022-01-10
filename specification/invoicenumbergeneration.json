@@ -1,7 +1,22 @@
 {
     "$schema": "./schema/specification.json",
     "version" : "0.0.0.1",
+    "id": "https://hubble.io/invoice/",
+    "uri": "https://hubble.io/invoice/",
     "features": [{
-
+       "id": "https://hubble.io/invoice/pdfgeneration",
+        "description" : "Generates invoice Pdf",
+        "consumes" : {
+            "invocationType" : "REST",
+            "inputSchemaURI" : "https://hubble.io/invoice/pdfgeneration#invoiceGenerationRequest"
+        },
+        "produces" : {
+            "invocationType" : "REST",
+            "outputSchemaURI" : "https://hubble.io/invoice/pdfgeneration#invoiceGenerationResponse"
+        },
+        "error": {
+            "produces": "REST",
+            "errorSchemaURI": "https://hubble.io/invoice/pdfgeneration#invoiceErrorSchema"
+        }
     }]
 }

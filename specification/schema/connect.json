@@ -71,7 +71,8 @@
       "type": "object",
       "properties": {
         "traceId": {
-          "type": "string"
+          "type": "string",
+          "description": "unique trace-id of the interaction"
         }
       }
     },
@@ -80,7 +81,8 @@
       "properties": {
         "id": {
           "type": "string",
-          "format": "uri"
+          "format": "uri",
+          "description": "unique identifier of the scenario which is used to certify the system"
         }
       }
     },

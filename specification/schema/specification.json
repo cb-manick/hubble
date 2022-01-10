@@ -17,6 +17,10 @@
       "version" : {
           "type" : "string",
           "description" : "Unique version for capability"
+      }, "connectConfig": {
+        "$ref" : "connect.json#/connectConfig"
+      },"connectBackConfig" : {
+        "$ref" : "connect.json#/connectConfig"
       }
 
     }

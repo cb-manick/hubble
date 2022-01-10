@@ -1,0 +1,54 @@
+{
+  "$id": "https://hubble.io/schemas/0.1/connect.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Specification - feature schema",
+  "type": "object",
+  "connectConfig": {
+    "type": "object",
+    "auth": {
+      "$ref": "#/definitions/auth"
+    },
+    "headers": {
+      "$ref": "#/definitions/header"
+    }
+  },
+  "definitions": {
+    "auth": {
+      "type": "object",
+      "properties": {
+        "authType": {
+          "type": "string",
+          "enum": [
+            "basic",
+            "digest",
+            "apikey",
+            "oauth"
+          ]
+        },
+        "headerName": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "header": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/headerItem"
+      }
+    },
+    "headerItem": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

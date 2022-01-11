@@ -13,14 +13,14 @@
         "description": "scenario definitions",
         "items": {
           "type": "object",
-          "$ref": "#/definitions/function"
+          "$ref": "#/definitions/scenario"
         },
         "additionalItems": false,
         "minItems": 1
       }
     ],
     "definitions": {
-      "function": {
+      "scenario": {
         "type": "object",
         "properties": {
           "id": {
@@ -32,3 +32,4 @@
       }
     }
   }
+}

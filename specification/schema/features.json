@@ -29,21 +29,31 @@
               "format": "uri",
               "minLength": 1
             },
-            "description": "description of the feature",
-            "consumes": {
-              "$ref": "#/definitions/consumes"
+            "operationRefName": {
+              "type": "string",
+              "description": "Operation Ref Name",
+              "minLength": 1
+            },
+            "description": {
+              "type": "string",
+              "description": "description of the feature",
+              "minLength": 1
             },
             "produces": {
-              "$ref" : "#/definitions/produces"
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "Callback Operation Ref Name"
+              }
             },
             "error": {
-              "$ref": "#/definitions/error"
+              "type": "string",
+              "description": "Error Operation Ref Name"
             }
           },
           "required": [
             "id",
-            "inputSchemaURI",
-            "consumes"
+            "operationRefName"
           ]
         }
       ]
@@ -67,20 +77,6 @@
         "REST",
         "Event"
       ]
-    },
-    "consumes": {
-      "type": "object",
-      "properties": {
-        "invocationType": {
-          "$ref":"#/definitions/transport"
-        },
-        "inputSchemaURI": {
-          "type": "string",
-          "description": "Schema URI / open api spec path",
-          "format": "uri",
-          "minLength": 1
-        }
-      }
     },
     "produces": {
       "type": "object",

@@ -25,6 +25,10 @@
     },
     "endpoints": {
       "$ref": "endpoints.json#/endpoints"
+    },"callBackEndpoints" : {
+      "$ref": "endpoints.json#/endpoints"
+    },"updateErrorEndpoints": {
+      "$ref": "endpoints.json#/endpoints"
     }
   }
 }

@@ -1,0 +1,34 @@
+{
+  "$id": "hubble.io/schemas/0.1/scenarios.json",
+  "$schema": "",
+  "scenarios": {
+    "oneOf": [
+      {
+        "type": "string",
+        "format": "uri",
+        "description": "URI to a resource containing scenario definitions (json or yaml)"
+      },
+      {
+        "type": "array",
+        "description": "scenario definitions",
+        "items": {
+          "type": "object",
+          "$ref": "#/definitions/function"
+        },
+        "additionalItems": false,
+        "minItems": 1
+      }
+    ],
+    "definitions": {
+      "function": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uri",
+            "description": "unique identifier of the scenario which is used to certify the system"
+          }
+        }
+      }
+    }
+  }

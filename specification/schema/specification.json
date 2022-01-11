@@ -1,28 +1,31 @@
 {
-  
-    "$id": "https://hubble.io/schemas/0.1/specification.json",
-    "$schema": "http://json-schema.org/draft-01/schema#",
-    "description": "Capability specification",
-    "type":"object",
-    "properties":{
-        "id": {
-        "type": "string",
-        "description": "Capability Specification unique identifier",
-        "minLength": 1,
-        "format": "uri"
-      },
-
-      "version" : {
-          "type" : "string",
-          "description" : "Unique version for capability"
-      }, "connectConfig": {
-        "$ref" : "connect.json#/connectConfig"
-      },"connectBackConfig" : {
-        "$ref" : "connect.json#/connectConfig"
-      },
-      "features": {
-        "$ref" : "features.json#/features"
-      }
+  "$id": "https://hubble.io/schemas/0.1/specification.json",
+  "$schema": "http://json-schema.org/draft-01/schema#",
+  "description": "Capability specification",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Capability Specification unique identifier",
+      "minLength": 1,
+      "format": "uri"
+    },
+    "version": {
+      "type": "string",
+      "description": "Unique version for capability"
+    },
+    "connectConfig": {
+      "$ref": "connect.json#/connectConfig"
+    },
+    "connectBackConfig": {
+      "$ref": "connect.json#/connectConfig"
+    },
+    "features": {
+      "$ref": "features.json#/features"
+    },
+    "endpoints": {
+      "$ref": "endpoints.json#/endpoints"
     }
+  }
 }
 

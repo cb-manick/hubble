@@ -63,7 +63,7 @@
       "host": "https://www.allinvoices-int.com/"
     }
   },
-  "scenario": {
+  "scenarios": [{
     "id": "scenario1"
-  }
+  }]
 }

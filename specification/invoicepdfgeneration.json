@@ -21,6 +21,13 @@
       }
     }
   ],
+  "endpoints": [
+    {
+      "name": "generatePdf",
+      "operation": "invoice.io/invoice.openspec#generatepdf",
+      "type": "rest"
+    }
+  ],
   "connectConfig": {
     "auth": "oauth",
     "headerName": "auth-header"
@@ -36,18 +43,20 @@
     }
   ],
   "instrumentation": {
-      "traceId": "xxx-sdfd-sdfag1"
-  },"environment": {
+    "traceId": "xxx-sdfd-sdfag1"
+  },
+  "environment": {
     "live": {
-        "host":"https://www.allinvoices.com/"
-    },"test": {
-        "host":"https://www.allinvoices-test.com/"
+      "host": "https://www.allinvoices.com/"
+    },
+    "test": {
+      "host": "https://www.allinvoices-test.com/"
     },
     "integration": {
-        "host":"https://www.allinvoices-int.com/"
+      "host": "https://www.allinvoices-int.com/"
     }
-
-  },"scenario": {
+  },
+  "scenario": {
     "id": "scenario1"
-   }
+  }
 }

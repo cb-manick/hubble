@@ -3,33 +3,43 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Specification - feature schema",
   "type": "object",
-  "connectConfig": {
-    "type": "object",
-    "auth": {
-      "$ref": "#/definitions/auth"
-    },
-    "headers": {
-      "$ref": "#/definitions/header"
-    },
-    "instrumentation": {
-      "$ref": "#/definitions/instrumentation"
-    },
-    "scenario": {
-      "$ref": "#/definitions/scenario"
-    },
-    "environment": {
-      "live": {
-        "$ref": "#/definitions/environment"
-      },
-      "test": {
-        "$ref": "#/definitions/environment"
-      },
-      "integration": {
-        "$ref": "#/definitions/environment"
-      }
+  "connectConfigs" : {
+    "type" : "array",
+    "items": {
+      "$ref": "#/definitions/connectConfig"
     }
-  },
+   },
   "definitions": {
+    "connectConfig": {
+      "type": "object",
+      "name": {
+        "type": "string",
+        "minLength" : 1
+      },
+      "auth": {
+        "$ref": "#/definitions/auth"
+      },
+      "headers": {
+        "$ref": "#/definitions/header"
+      },
+      "instrumentation": {
+        "$ref": "#/definitions/instrumentation"
+      },
+      "scenario": {
+        "$ref": "#/definitions/scenario"
+      },
+      "environment": {
+        "live": {
+          "$ref": "#/definitions/environment"
+        },
+        "test": {
+          "$ref": "#/definitions/environment"
+        },
+        "integration": {
+          "$ref": "#/definitions/environment"
+        }
+      }
+    },
     "auth": {
       "type": "object",
       "properties": {

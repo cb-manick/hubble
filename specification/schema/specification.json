@@ -14,13 +14,10 @@
       "type": "string",
       "description": "Unique version for capability"
     },
-    "connectConfig": {
-      "$ref": "connect.json#/connectConfig"
+    "connectConfigs": {
+      "$ref": "connect.json#/connectConfigs"
     },
-    "connectBackConfig": {
-      "$ref": "connect.json#/connectConfig"
-    },
-    "features": {
+   "features": {
       "$ref": "features.json#/features"
     },
     "endpoints": {

@@ -18,31 +18,36 @@
     {
       "name": "generatePdf",
       "operation": "https://huble.io/invoice.openspec#generatepdf",
-      "type": "rest"
+      "type": "rest",
+      "connectConfigRefName": "connect"
+
     }
   ],
   "callBackEndpoints": [
     {
       "name": "updateInvoicePdf",
       "operation": "https://huble.io/invoice.openspec#updatepdf",
-      "type": "rest"
+      "type": "rest",
+      "connectConfigRefName": "connectChargeBee"
     }
   ],
   "updateErrorEndpoints": [
     {
       "name": "generatePdfError",
-      "operation": "\"https://huble.io/invoice.openspec#updatepdf",
+      "operation": "https://huble.io/invoice.openspec#updatepdf",
       "type": "rest"
     }
   ],
-  "connectConfig": {
+  "connectConfigs":[ {
+    "name": "connect",
     "auth": "oauth",
     "headerName": "auth-header"
   },
-  "connectBackConfig": {
+   {
+     "name": "connectChargeBee",
     "auth": "apikey",
     "headerName": "auth-header"
-  },
+  }],
   "headers": [
     {
       "key": "x-provide",

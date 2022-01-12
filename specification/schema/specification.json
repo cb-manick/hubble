@@ -30,8 +30,8 @@
     },"updateErrorEndpoints": {
       "$ref": "endpoints.json#/endpoints"
     },
-    "bundles": {
-      "$ref": "bundleset.json#/bundles",
+    "featureBundles": {
+      "$ref": "featurebundle.json#/featureBundles",
       "description": "Group of features that needs to be over ridden together."
       }
     }

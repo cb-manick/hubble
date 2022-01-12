@@ -1,5 +1,5 @@
 {
-  "$id": "https://hubble.io/schemas/0.1/bundleset.json",
+  "$id": "https://hubble.io/schemas/0.1/featurebundle.json",
   "$schema" : "http://json-schema.org/draft-07/schema#",
   "featureBundles" : {
     "type": "object",

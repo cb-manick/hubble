@@ -29,6 +29,10 @@
               "format": "uri",
               "minLength": 1
             },
+            "version": {
+              "type": "string",
+              "description": "Version of the feature"
+            },
             "operationRefName": {
               "type": "string",
               "description": "Operation Ref Name",

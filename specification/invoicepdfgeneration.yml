@@ -6,21 +6,31 @@ uri: https://hubble.io/invoice/
 features:
   - id: https://hubble.io/invoice/pdfgeneration
     description: Generates invoice Pdf
-    consumes:
-      invocationType: REST
-      inputSchemaURI: https://hubble.io/invoice/pdfgeneration#invoiceGenerationRequest
+    operationRefName: generatePdf
     produces:
-      invocationType: REST
-      outputSchemaURI: https://hubble.io/invoice/pdfgeneration#invoiceGenerationResponse
-    error:
-      produces: REST
-      errorSchemaURI: https://hubble.io/invoice/pdfgeneration#invoiceErrorSchema
-connectConfig:
-  auth: oauth
-  headerName: auth-header
-connectBackConfig:
-  auth: apikey
-  headerName: auth-header
+      - updateInvoicePdf
+    error: generatePdfError
+endpoints:
+  - name: generatePdf
+    operation: https://huble.io/invoice.openspec#generatepdf
+    type: rest
+    connectConfigRefName: connect
+callBackEndpoints:
+  - name: updateInvoicePdf
+    operation: https://huble.io/invoice.openspec#updatepdf
+    type: rest
+    connectConfigRefName: connectChargeBee
+updateErrorEndpoints:
+  - name: generatePdfError
+    operation: https://huble.io/invoice.openspec#updatepdf
+    type: rest
+connectConfigs:
+  - name: connect
+    auth: oauth
+    headerName: auth-header
+  - name: connectChargeBee
+    auth: apikey
+    headerName: auth-header
 headers:
   - key: x-provide
     value: value
@@ -33,5 +43,5 @@ environment:
     host: https://www.allinvoices-test.com/
   integration:
     host: https://www.allinvoices-int.com/
-scenario:
-  id: scenario1
+scenarios:
+  - id: scenario1

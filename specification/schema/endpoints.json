@@ -47,7 +47,7 @@
             "asyncapi",
             "rpc",
             "graphql",
-            "odata",
+            "odata"
           ],
           "default": "rest"
         }

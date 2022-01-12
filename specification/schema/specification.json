@@ -29,7 +29,14 @@
       "$ref": "endpoints.json#/endpoints"
     },"updateErrorEndpoints": {
       "$ref": "endpoints.json#/endpoints"
+    },
+    "bundles": {
+      "$ref": "bundleset.json#/bundles",
+      "description": "Group of features that needs to be over ridden together."
+      }
     }
   }
+
+
 }
 

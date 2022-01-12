@@ -1,0 +1,29 @@
+{
+  "$id": "https://hubble.io/schemas/0.1/bundleset.json",
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "featureBundles" : {
+    "type": "object",
+    "description": "Bundle Sets that needs to be updated together or over ridden together",
+    "items": {
+      "$ref": "#/definitions/featureBundleSet",
+      "descriptions": "arrays of feature set that goes together"
+    }
+    },
+   "definitions": {
+     "featureBundleSet" : {
+       "type" : "array",
+       "description": "feature set array that makes a bundle  ",
+       "$items" : {
+         "$ref" : "#/definitions/featureBundle"
+       }
+     },
+     "featureBundle": {
+       "type": "array",
+       "description": "arrays of feature refs",
+       "$items" : {
+         "type": "string",
+         "description" : "feature name"
+       }
+     }
+   }
+}

@@ -25,18 +25,27 @@
     },
     "endpoints": {
       "$ref": "endpoints.json#/endpoints"
-    },"callBackEndpoints" : {
+    },
+    "callBackEndpoints": {
       "$ref": "endpoints.json#/endpoints"
-    },"updateErrorEndpoints": {
+    },
+    "updateErrorEndpoints": {
       "$ref": "endpoints.json#/endpoints"
     },
     "featureBundles": {
-      "$ref": "featurebundle.json#/featureBundles",
+      "$ref": "featurebundles.json#/featureBundles",
       "description": "Group of features that needs to be over ridden together."
-      }
+    }
+  },
+  "deprecatedFeatures": {
+    "type": "array",
+    "items": {
+      "type": "string",
+      "description" : "feature ref names"
     }
   }
-
-
 }
+
+
+
 

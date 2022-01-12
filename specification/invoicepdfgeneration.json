@@ -7,27 +7,23 @@
     {
       "id": "https://hubble.io/invoice/pdfgeneration",
       "description": "Generates invoice Pdf",
-      "operationRefName"="operationRefName",
-      "produces": {
-        "invocationType": "REST",
-        "outputSchemaURI": "https://hubble.io/invoice/pdfgeneration#invoiceGenerationResponse"
-      },
-      "error": {
-        "produces": "REST",
-        "errorSchemaURI": "https://hubble.io/invoice/pdfgeneration#invoiceErrorSchema"
-      }
+      "operationRefName":"generatePdf",
+      "produces": [
+        "updateInvoicePdf"
+      ],
+      "error": "generatePdfError"
     }
   ],
   "endpoints": [
     {
-      "name": "operationRefName",
+      "name": "generatePdf",
       "operation": "https://huble.io/invoice.openspec#generatepdf",
       "type": "rest"
     }
   ],
   "callBackEndpoints": [
     {
-      "name": "generatedPdf",
+      "name": "updateInvoicePdf",
       "operation": "https://huble.io/invoice.openspec#updatepdf",
       "type": "rest"
     }

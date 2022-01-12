@@ -57,39 +57,6 @@
           ]
         }
       ]
-    },
-    "error": {
-      "type": "object",
-      "properties": {
-        "errorSchemaURI": {
-          "type": "string",
-          "description": "Schema URI/ open api spec path",
-          "minLength": 1
-        },
-        "produces":{
-          "$ref":"#/definitions/transport"
-        }
-      }
-    },
-    "transport": {
-      "type": "string",
-      "enum": [
-        "REST",
-        "Event"
-      ]
-    },
-    "produces": {
-      "type": "object",
-      "properties": {
-        "invocationType": {
-          "$ref":"#/definitions/transport"
-        },
-        "outputSchemaURI": {
-          "type": "string",
-          "description": "Schema URI/ open api spec path",
-          "minLength": 1
-        }
-      }
     }
   }
 }

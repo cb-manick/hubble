@@ -3,7 +3,65 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "description": "Provider Config",
   "type": "object",
-  "providerConfig": {
-
+  "properties": {
+    "providingCapability": {
+      "type": "string",
+      "format": "uri",
+      "minLength": 1
+    },
+    "providingCapabilityVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "providingFeatures" : {
+      "type" : "array",
+      "items" : {
+        "type": "string",
+        "maxItems": 1
+      }
+    },
+    "endpointConfigs": {
+      "$ref": "#/definitions/endpointConfigs"
+    },
+    "environment": {
+      "live": {
+        "$ref": "#/definitions/environment"
+      },
+      "test": {
+        "$ref": "#/definitions/environment"
+      },
+      "integration": {
+        "$ref": "#/definitions/environment"
+      }
+    }
+  },
+  "definitions": {
+    "endpointConfigs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/endpointConfig"
+      }
+    },
+    "endpointConfig": {
+      "type": "object",
+      "properties": {
+        "endpointRefName": {
+          "type": "string",
+          "minLength": 1
+        },
+        "connect": {
+          "$ref": "connect.json#/connectConfigs"
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    }
   }
 }

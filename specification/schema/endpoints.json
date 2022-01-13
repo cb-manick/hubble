@@ -45,6 +45,8 @@
           "enum": [
             "rest",
             "asyncapi",
+            "cloudevents",
+            "events",
             "rpc",
             "graphql",
             "odata"

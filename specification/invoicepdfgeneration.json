@@ -38,7 +38,7 @@
       "type": "rest"
     }
   ],
-  "healthEndpoint" : [
+  "healthEndpoints" : [
     {
       "name": "health",
       "operation": "https://huble.io/invoice.openspec#health",

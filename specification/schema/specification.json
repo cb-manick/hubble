@@ -29,7 +29,7 @@
     "updateErrorEndpoints": {
       "$ref": "endpoints.json#/endpoints"
     },
-    "healthEndpoint": {
+    "healthEndpoints": {
       "$ref": "endpoints.json/endpoints"
     },
     "featureBundles": {

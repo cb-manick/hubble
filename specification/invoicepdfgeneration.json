@@ -11,7 +11,8 @@
       "produces": [
         "updateInvoicePdf"
       ],
-      "error": "generatePdfError"
+      "error": "generatePdfError",
+      "health": "health"
     }
   ],
   "endpoints": [
@@ -20,7 +21,6 @@
       "operation": "https://huble.io/invoice.openspec#generatepdf",
       "type": "rest",
       "connectConfigRefName": "connect"
-
     }
   ],
   "callBackEndpoints": [
@@ -35,6 +35,13 @@
     {
       "name": "generatePdfError",
       "operation": "https://huble.io/invoice.openspec#updatepdf",
+      "type": "rest"
+    }
+  ],
+  "healthEndpoint" : [
+    {
+      "name": "health",
+      "operation": "https://huble.io/invoice.openspec#health",
       "type": "rest"
     }
   ],

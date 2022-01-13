@@ -53,6 +53,11 @@
             "error": {
               "type": "string",
               "description": "Error Operation Ref Name"
+            },
+            "health" : {
+              "type": "string",
+              "description": "Health Operation Ref Name",
+              "minLength": 1
             }
           },
           "required": [

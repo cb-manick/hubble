@@ -29,6 +29,9 @@
     "updateErrorEndpoints": {
       "$ref": "endpoints.json#/endpoints"
     },
+    "healthEndpoint": {
+      "$ref": "endpoints.json/endpoints"
+    },
     "featureBundles": {
       "$ref": "featurebundles.json#/featureBundles",
       "description": "Group of features that needs to be over ridden together."

@@ -3,9 +3,11 @@
   "version": "0.0.0.1",
   "id": "https://hubble.io/invoice/providers/taxjar",
   "uri": "https://hubble.io/invoice/providers/taxjar",
-  "providingCapability":  "https://hubble.io/invoice/",
+  "providingCapability": "https://hubble.io/invoice/",
   "providingCapabilityVersion": "0.0.0.1",
-  "providingFeatures": ["https://hubble.io/invoice/pdfgeneration"],
+  "providingFeatures": [
+    "https://hubble.io/invoice/pdfgeneration"
+  ],
   "environment": {
     "environment": {
       "live": {
@@ -19,10 +21,25 @@
       }
     }
   },
-  "endpointConfigs": [{
-    "endpointRefName": "generatePdf",
-    "connect": {
-
+  "endpointConfigs": [
+    {
+      "endpointRefName": "generatePdf",
+      "connect": {
+        "auth": {
+          "name": "connect",
+          "auth": "oauth",
+          "headerName": "auth-header"
+        },
+        "headers": [
+          {
+            "key": "x-provide",
+            "value": "value"
+          }
+        ],
+        "instrumentation": {
+          "traceId": "xxx-sdfd-sdfag1"
+        }
+      }
     }
-  }]
+  ]
 }

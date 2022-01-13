@@ -45,26 +45,5 @@
       "type": "rest"
     }
   ],
-  "connectConfigs":[ {
-    "name": "connect",
-    "auth": "oauth",
-    "headerName": "auth-header"
-  },
-   {
-     "name": "connectChargeBee",
-    "auth": "apikey",
-    "headerName": "auth-header"
-  }],
-  "headers": [
-    {
-      "key": "x-provide",
-      "value": "value"
-    }
-  ],
-  "instrumentation": {
-    "traceId": "xxx-sdfd-sdfag1"
-  },
-  "scenarios": [{
-    "id": "scenario1"
-  }]
+  "connectConfigs":[]
 }

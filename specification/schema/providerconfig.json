@@ -50,7 +50,7 @@
           "minLength": 1
         },
         "connect": {
-          "$ref": "connect.json#/connectConfigs"
+          "$ref": "connect.json#/definitions/connectConfig"
         }
       }
     },

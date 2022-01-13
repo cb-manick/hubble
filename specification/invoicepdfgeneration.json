@@ -64,17 +64,6 @@
   "instrumentation": {
     "traceId": "xxx-sdfd-sdfag1"
   },
-  "environment": {
-    "live": {
-      "host": "https://www.allinvoices.com/"
-    },
-    "test": {
-      "host": "https://www.allinvoices-test.com/"
-    },
-    "integration": {
-      "host": "https://www.allinvoices-int.com/"
-    }
-  },
   "scenarios": [{
     "id": "scenario1"
   }]

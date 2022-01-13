@@ -7,14 +7,14 @@ providingCapability: https://hubble.io/invoice/
 providingCapabilityVersion: 0.0.0.1
 providingFeatures:
   - https://hubble.io/invoice/pdfgeneration
-environment:
-  environment:
-    live:
-      host: https://www.allinvoices.com/
-    test:
-      host: https://www.allinvoices-test.com/
-    integration:
-      host: https://www.allinvoices-int.com/
+#environment:
+#  environment:
+#    live:
+#      host: https://www.allinvoices.com/
+#    test:
+#      host: https://www.allinvoices-test.com/
+#    integration:
+#      host: https://www.allinvoices-int.com/
 endpointConfigs:
   - endpointRefName: generatePdf
     connect:
@@ -25,5 +25,4 @@ endpointConfigs:
       headers:
         - key: x-provide
           value: value
-      instrumentation:
-        traceId: xxx-sdfd-sdfag1
+

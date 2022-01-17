@@ -38,7 +38,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 ![image](./images/05-invoice-capability-overridingscenario.png)
 
-![image](./images/04-capability-connector-config.png)
+![image](./images/06-capability-connector-config.png)
 ### Ways to Solve ###
 
 

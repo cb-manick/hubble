@@ -28,21 +28,25 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 # Scenarios #
 
-## Invoice - Pdf Generation - Externalization ##
-* Merchant configures logo
-* Merchant configures Note
-* Merchant configures Payment Instruction in terms of due payment
-** What needs to be done when logo changes freshdesk vs freshworks ** 
-
 ![image](./images/09-capability-overriding.png)
-
-![image](./images/04-invoice-pdf-generation.png)
 
 ![image](./images/05-invoice-capability-overridingscenario.png)
 
 ![image](./images/07-invoice-capability-overridingscenario-async.png)
 
 ![image](./images/06-capability-connector-config.png)
+
+## Invoice - Pdf Generation - Externalization ##
+* Merchant configures logo
+* Merchant configures Note
+* Merchant configures Payment Instruction in terms of due payment
+** What needs to be done when logo changes freshdesk vs freshworks ** 
+
+
+
+![image](./images/04-invoice-pdf-generation.png)
+
+
 
 
 ### Ways to Solve ###

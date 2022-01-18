@@ -34,6 +34,8 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 * Merchant configures Payment Instruction in terms of due payment
 ** What needs to be done when logo changes freshdesk vs freshworks ** 
 
+![image](./images/09-capability-overriding.png)
+
 ![image](./images/04-invoice-pdf-generation.png)
 
 ![image](./images/05-invoice-capability-overridingscenario.png)

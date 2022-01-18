@@ -36,6 +36,8 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 ![image](./images/06-capability-connector-config.png)
 
+![image](./images/08-credential-scenarios.png)
+
 ## Invoice - Pdf Generation - Externalization ##
 * Merchant configures logo
 * Merchant configures Note

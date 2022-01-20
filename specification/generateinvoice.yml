@@ -1,78 +1,145 @@
-asyncapi: 2.0.0
+asyncapi: '2.2.0'
 info:
-  title: Pdf Service
+  title: Invoice Pdf Generation
   version: '1.0.0'
   description: |
-    Generates pdf upon  events
+    Invoice Generation Allows you to generate Invoice
+
+    ### Check out its awesome features:
+
+    * Generate Pdf for a Invoice
+    * Notify Once  PDF is generated
+    * Receive real-time health Information 📈
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 
-channels:
-  invoice/generateinvoice:
-    consume:
-      operationId: generateInvoice
-      message:
-        $ref : '#/components/messages/GenerateUserInvoice'
-    publish:
-      operationId: generateInvoiceCompleted
-      message:
-        $ref: '#/components/messages/GenerateInvoiceCompleted'
+servers:
+  test:
+    url: test.mykafkacluster.org:8092
+    protocol: kafka-secure
+    description: Test broker
+    security:
+      - saslScram: []
 
+defaultContentType: application/json
+
+channels:
+  invoice.generatePDF:
+    description: The topic on which generate invoice command is received.
+    subscribe:
+      summary: Inform about environmental lighting conditions of a particular streetlight.
+      operationId: generatePDF
+      traits:
+        - $ref: '#/components/operationTraits/kafka'
+      message:
+        $ref: '#/components/messages/generatePDF'
+
+  invoice.pdfGenerated:
+    description: The topic on which notification of pdf generation happens
+    publish:
+      operationId: pdfGenerated
+      traits:
+        - $ref: '#/components/operationTraits/kafka'
+      message:
+        $ref: '#/components/messages/pdfGenerated'
+
+  invoice.generatePdf.health:
+    description: The topic on which notification of pdf generation happens
+    publish:
+      operationId: health
+      traits:
+        - $ref: '#/components/operationTraits/kafka'
+      message:
+        $ref: '#/components/messages/pdfGenerated'
 
 components:
   messages:
-    messages:
-      GenerateInvoice:
-        name: GenerateUserInvoice
-        title: GenerateUserInvoice
-        summary: GenerateUserInvoice
-        contentType: application/json
-        payload:
-          $ref: '#/components/schemas/GenerateInvoice'
-
-    GenerateInvoiceCompleted:
-      name: userSignedUp
-      title: User signed up event
-      summary: Inform about a new user registration in the system
+    generatePDF:
+      name: generatePdf
+      title: Generate PDF Payload
+      summary: Payload to process of PDF payload.
       contentType: application/json
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
       payload:
-        $ref: '#/components/schemas/GenerateInvoiceCompleted'
+        $ref: "#/components/schemas/lightMeasuredPayload"
+    pdfGenerated:
+      name: turnOnOff
+      title: Turn on/off
+      summary: Command a particular streetlight to turn the lights on or off.
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+      payload:
+        $ref: "#/components/schemas/turnOnOffPayload"
+    dimLight:
+      name: dimLight
+      title: Dim light
+      summary: Command a particular streetlight to dim the lights.
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+      payload:
+        $ref: "#/components/schemas/dimLightPayload"
 
   schemas:
-    GenerateInvoiceCompleted:
+    lightMeasuredPayload:
       type: object
       properties:
-        firstName:
-          type: string
-          description: "foo"
-        lastName:
-          type: string
-          description: "bar"
-        email:
-          type: string
-          format: email
-          description: "baz"
-        createdAt:
-          type: string
-          format: date-time
-          description: "foo
-
-    GenerateInvoice:
+        lumens:
+          type: integer
+          minimum: 0
+          description: Light intensity measured in lumens.
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+    turnOnOffPayload:
       type: object
       properties:
-        firstName:
+        command:
           type: string
-          description: "foo"
-        lastName:
-          type: string
-          description: "bar"
-        email:
-          type: string
-          format: email
-          description: "baz"
-        createdAt:
-          type: string
-          format: date-time
-          description: "foo
+          enum:
+            - on
+            - off
+          description: Whether to turn on or off the light.
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+    dimLightPayload:
+      type: object
+      properties:
+        percentage:
+          type: integer
+          description: Percentage to which the light should be dimmed to.
+          minimum: 0
+          maximum: 100
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+    sentAt:
+      type: string
+      format: date-time
+      description: Date and time when the message was sent.
 
+  securitySchemes:
+    saslScram:
+      type: scramSha256
+      description: Provide your username and password for SASL/SCRAM authentication
+
+  parameters:
+    streetlightId:
+      description: The ID of the streetlight.
+      schema:
+        type: string
+
+  messageTraits:
+    commonHeaders:
+      headers:
+        type: object
+        properties:
+          my-app-header:
+            type: integer
+            minimum: 0
+            maximum: 100
+
+  operationTraits:
+    kafka:
+      bindings:
+        kafka:
+          clientId: my-app-id

@@ -28,7 +28,7 @@ channels:
   invoice.generatePDF:
     description: The topic on which generate invoice command is received.
     subscribe:
-      summary: Inform about environmental lighting conditions of a particular streetlight.
+      summary: Invoice Generation
       operationId: generatePDF
       traits:
         - $ref: '#/components/operationTraits/kafka'
@@ -51,38 +51,38 @@ channels:
       traits:
         - $ref: '#/components/operationTraits/kafka'
       message:
-        $ref: '#/components/messages/pdfGenerated'
+        $ref: '#/components/messages/health'
 
 components:
   messages:
     generatePDF:
-      name: generatePdf
-      title: Generate PDF Payload
-      summary: Payload to process of PDF payload.
+      name: generatePDF
+      title: Generate PDF 
+      summary: Payload which generates PDF.
       contentType: application/json
       traits:
         - $ref: '#/components/messageTraits/commonHeaders'
       payload:
-        $ref: "#/components/schemas/lightMeasuredPayload"
+        $ref: "#/components/schemas/generatePDF"
     pdfGenerated:
-      name: turnOnOff
-      title: Turn on/off
-      summary: Command a particular streetlight to turn the lights on or off.
+      name: pdfGenerated
+      title: PDF generated NOtification
+      summary: PDF generated Notification.
       traits:
         - $ref: '#/components/messageTraits/commonHeaders'
       payload:
-        $ref: "#/components/schemas/turnOnOffPayload"
-    dimLight:
-      name: dimLight
-      title: Dim light
-      summary: Command a particular streetlight to dim the lights.
+        $ref: "#/components/schemas/pdfGenerated"
+    health:
+      name: health
+      title: Health
+      summary: Healt of the provider
       traits:
         - $ref: '#/components/messageTraits/commonHeaders'
       payload:
-        $ref: "#/components/schemas/dimLightPayload"
+        $ref: "#/components/schemas/healthPayload"
 
   schemas:
-    lightMeasuredPayload:
+    generatePDF:
       type: object
       properties:
         lumens:
@@ -91,7 +91,7 @@ components:
           description: Light intensity measured in lumens.
         sentAt:
           $ref: "#/components/schemas/sentAt"
-    turnOnOffPayload:
+    pdfGenerated:
       type: object
       properties:
         command:
@@ -99,15 +99,15 @@ components:
           enum:
             - on
             - off
-          description: Whether to turn on or off the light.
+          description: Invoice.
         sentAt:
           $ref: "#/components/schemas/sentAt"
-    dimLightPayload:
+    healthPayload:
       type: object
       properties:
         percentage:
           type: integer
-          description: Percentage to which the light should be dimmed to.
+          description: Invoice
           minimum: 0
           maximum: 100
         sentAt:
@@ -122,11 +122,6 @@ components:
       type: scramSha256
       description: Provide your username and password for SASL/SCRAM authentication
 
-  parameters:
-    streetlightId:
-      description: The ID of the streetlight.
-      schema:
-        type: string
 
   messageTraits:
     commonHeaders:

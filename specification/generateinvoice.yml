@@ -1,0 +1,78 @@
+asyncapi: 2.0.0
+info:
+  title: Pdf Service
+  version: '1.0.0'
+  description: |
+    Generates emails upon certain events
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+channels:
+  invoice/generateinvoice:
+    consume:
+      operationId: generateInvoice
+      message:
+        $ref : '#/components/messages/GenerateUserInvoice'
+    publish:
+      operationId: generateInvoiceCompleted
+      message:
+        $ref: '#/components/messages/GenerateInvoiceCompleted'
+
+
+components:
+  messages:
+    messages:
+      GenerateInvoice:
+        name: GenerateUserInvoice
+        title: GenerateUserInvoice
+        summary: GenerateUserInvoice
+        contentType: application/json
+        payload:
+          $ref: '#/components/schemas/GenerateInvoice'
+
+    GenerateInvoiceCompleted:
+      name: userSignedUp
+      title: User signed up event
+      summary: Inform about a new user registration in the system
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/GenerateInvoiceCompleted'
+
+  schemas:
+    GenerateInvoiceCompleted:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: "foo"
+        lastName:
+          type: string
+          description: "bar"
+        email:
+          type: string
+          format: email
+          description: "baz"
+        createdAt:
+          type: string
+          format: date-time
+          description: "foo
+
+    GenerateInvoice:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: "foo"
+        lastName:
+          type: string
+          description: "bar"
+        email:
+          type: string
+          format: email
+          description: "baz"
+        createdAt:
+          type: string
+          format: date-time
+          description: "foo
+

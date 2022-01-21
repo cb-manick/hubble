@@ -43,6 +43,13 @@
         "type": "object",
         "$ref": "#"
       }
+    },
+    "securityScope": {
+      "type": "array",
+      "description": "Security Scope",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

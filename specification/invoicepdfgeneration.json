@@ -28,6 +28,7 @@
   "providerSelection": "Priority",
   "encapsulatingCapabilities": [
 
-  ]
+  ],
+  "securityScope": ["invoice"]
 
 }

@@ -19,27 +19,8 @@
       "type": "string",
       "description": "Unique version for capability"
     },
-    "connectConfigs": {
-      "$ref": "connect.json#/connectConfigs"
-    },
-   "features": {
-      "$ref": "features.json#/features"
-    },
     "endpoints": {
       "$ref": "endpoints.json#/endpoints"
-    },
-    "callBackEndpoints": {
-      "$ref": "endpoints.json#/endpoints"
-    },
-    "updateErrorEndpoints": {
-      "$ref": "endpoints.json#/endpoints"
-    },
-    "healthEndpoints": {
-      "$ref": "endpoints.json/endpoints"
-    },
-    "featureBundles": {
-      "$ref": "featurebundles.deprecated.json#/featureBundles",
-      "description": "Group of features that needs to be over ridden together."
     }
   }
 }

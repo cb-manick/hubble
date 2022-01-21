@@ -25,6 +25,7 @@
     }
   ],
   "overridingType": "single",
+  "providerSelection": "Priority",
   "encapsulatingCapabilities": [
 
   ]

@@ -29,6 +29,13 @@
         "multiple"
       ]
     },
+    "providerSelection": {
+      "type": "string",
+      "enum": [
+        "Priority",
+        "Rule"
+      ]
+    },
     "encapsulatingCapabilities": {
       "type": "array",
       "description":  "Encapsulating Capability",

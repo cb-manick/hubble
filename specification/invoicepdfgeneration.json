@@ -24,6 +24,7 @@
       "mustImplement": "true"
     }
   ],
+  "overridingType": "single",
   "encapsulatingCapabilities": [
 
   ]

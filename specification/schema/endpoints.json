@@ -52,10 +52,6 @@
             "odata"
           ],
           "default": "rest"
-        },
-        "connectConfigRefName": {
-          "type": "string",
-          "description": "Ref name of connectConfigs"
         }
       },
       "additionalProperties": false,

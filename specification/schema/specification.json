@@ -21,6 +21,14 @@
     },
     "endpoints": {
       "$ref": "endpoints.json#/endpoints"
+    },
+    "encapsulatingCapabilities": {
+      "type": "array",
+      "description":  "Encapsulating Capability",
+      "items": {
+        "type": "object",
+        "$ref": "#"
+      }
     }
   }
 }

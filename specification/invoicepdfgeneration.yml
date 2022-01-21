@@ -1,47 +1,22 @@
 ---
 "$schema": "./schema/specification.json"
 version: 0.0.0.1
-id: https://hubble.io/invoice/
-uri: https://hubble.io/invoice/
-features:
-  - id: https://hubble.io/invoice/pdfgeneration
-    description: Generates invoice Pdf
-    operationRefName: generatePdf
-    produces:
-      - updateInvoicePdf
-    error: generatePdfError
+id: https://hubble.io/invoice/pdfGeneration
+uri: https://hubble.io/invoice/pdfGeneration
+path: https://hubble.io/invoice/pdfGeneration
 endpoints:
-  - name: generatePdf
-    operation: https://huble.io/invoice.openspec#generatepdf
-    type: rest
-    connectConfigRefName: connect
-callBackEndpoints:
-  - name: updateInvoicePdf
-    operation: https://huble.io/invoice.openspec#updatepdf
-    type: rest
-    connectConfigRefName: connectChargeBee
-updateErrorEndpoints:
-  - name: generatePdfError
-    operation: https://huble.io/invoice.openspec#updatepdf
-    type: rest
-connectConfigs:
-  - name: connect
-    auth: oauth
-    headerName: auth-header
-  - name: connectChargeBee
-    auth: apikey
-    headerName: auth-header
-headers:
-  - key: x-provide
-    value: value
-instrumentation:
-  traceId: xxx-sdfd-sdfag1
-environment:
-  live:
-    host: https://www.allinvoices.com/
-  test:
-    host: https://www.allinvoices-test.com/
-  integration:
-    host: https://www.allinvoices-int.com/
-scenarios:
-  - id: scenario1
+  - name: generatePdfCommand
+    operation: https://huble.io/generateinvoice.yml#invoice.generatePDF
+    type: asyncapi
+    mustImplement: 'true'
+  - name: generatePdfNotification
+    operation: https://huble.io/generateinvoice.yml#invoice.pdfGenerated
+    type: asyncapi
+    mustImplement: 'true'
+  - name: generatePdfHealth
+    operation: https://huble.io/generateinvoice.yml#invoice.generatePdf.health
+    type: asyncapi
+    mustImplement: 'true'
+overridingType: single
+providerSelection: Priority
+encapsulatingCapabilities: []

@@ -52,6 +52,11 @@
             "odata"
           ],
           "default": "rest"
+        },
+        "mustImplement": {
+          "type": "boolean",
+          "description": "Indicates whether this endpoint must be overriden or not.",
+          "default": true
         }
       },
       "additionalProperties": false,

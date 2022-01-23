@@ -1,0 +1,17 @@
+{
+  "$id": "hubble.io/schemas/0.1/scenarios.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "security": {
+    "oneOf": [
+      {
+        "type": "string",
+        "format": "uri",
+        "description": "URI to a resource containing scenario definitions (json or yaml)"
+      },
+      {
+
+      }
+    ]
+  }
+}

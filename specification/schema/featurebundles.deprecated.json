@@ -13,7 +13,7 @@
      "featureBundleSet" : {
        "type" : "array",
        "description": "feature set array that makes a bundle  ",
-       "$items" : {
+       "items" : {
          "$ref" : "#/definitions/featureBundle"
        }
      },

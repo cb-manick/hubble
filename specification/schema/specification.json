@@ -12,7 +12,7 @@
     },
     "path": {
       "type": "string",
-      "description" : "Capability Definition Path",
+      "description": "Capability Definition Path",
       "format": "uri"
     },
     "version": {
@@ -36,23 +36,38 @@
         "Rule"
       ]
     },
-    "encapsulatingCapabilities": {
+    "securityScope": {
+      "$ref": "securityspecification.json#/security"
+    },
+    "containingCapabilities": {
+      "$ref": "#/definitions/capabilityReferences"
+    }
+  },
+  "definitions": {
+    "capabilityReferences": {
       "type": "array",
-      "description":  "Encapsulating Capability",
+      "description": "Capability Reference",
       "items": {
         "type": "object",
-        "$ref": "#"
-      }
+        "$ref": "#/definitions/capabilityReference"
+      },
+      "additionalItems": false,
+      "minItems": 1
     },
-    "securityScope": {
-      "type": "array",
-      "description": "Security Scope",
-      "items": {
-        "type": "string"
+    "capabilityReference": {
+      "type": "object",
+      "properties": {
+        "capabilityRootedPath": {
+          "type": "string",
+          "format": "uri"
+        }
       }
     }
   }
 }
+
+
+
 
 
 

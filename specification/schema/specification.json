@@ -60,6 +60,14 @@
         "capabilityRootedPath": {
           "type": "string",
           "format": "uri"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the capability"
+        },
+        "specificationPath": {
+          "type": "string",
+          "description": "Specification Description Path"
         }
       }
     }

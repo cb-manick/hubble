@@ -6,7 +6,10 @@
   "path": "https://hubble.io/invoice",
   "overridingType": "single",
   "providerSelection": "Priority",
-  "encapsulatingCapabilities": [
+
+  "capabilityReference": [
+    {"capabilityRootedPath": "https://hubble.io/invoice"},
+    {"capabilityRootedPath": "https://hubble.io/invoice"}
 
   ],
   "securityScope": ["invoice"]

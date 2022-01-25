@@ -4,26 +4,6 @@
   "id": "https://hubble.io/invoice",
   "uri": "https://hubble.io/invoice",
   "path": "https://hubble.io/invoice",
-  "endpoints": [
-    {
-      "name": "generatePdfCommand",
-      "operation": "https://huble.io/generateinvoice.yml#invoice.generatePDF",
-      "type": "asyncapi",
-      "mustImplement": "true"
-    },
-    {
-      "name": "generatePdfNotification",
-      "operation": "https://huble.io/generateinvoice.yml#invoice.pdfGenerated",
-      "type": "asyncapi",
-      "mustImplement": "true"
-    },
-    {
-      "name": "generatePdfHealth",
-      "operation": "https://huble.io/generateinvoice.yml#invoice.generatePdf.health",
-      "type": "asyncapi",
-      "mustImplement": "true"
-    }
-  ],
   "overridingType": "single",
   "providerSelection": "Priority",
   "encapsulatingCapabilities": [

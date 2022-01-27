@@ -40,24 +40,32 @@
       "$ref": "securityspecification.json#/security"
     },
     "containingCapabilities": {
-      "$ref": "#/definitions/capabilityReferences"
+      "$ref": "#/definitions/containingCapabilities"
     }
   },
   "definitions": {
-    "capabilityReferences": {
+    "containingCapabilities": {
       "type": "array",
       "description": "Capability Reference",
       "items": {
         "type": "object",
-        "$ref": "#/definitions/capabilityReference"
+        "$ref": "#/definitions/containingCapability"
       },
       "additionalItems": false,
       "minItems": 1
     },
-    "capabilityReference": {
+    "containingCapability": {
       "type": "object",
       "properties": {
-        "capabilityRootedPath": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "path": {
+          "type": "string",
+          "format": "uri"
+        },
+        "path": {
           "type": "string",
           "format": "uri"
         },

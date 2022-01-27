@@ -6,12 +6,23 @@
   "path": "https://hubble.io/invoice",
   "overridingType": "single",
   "providerSelection": "Priority",
-
-  "capabilityReference": [
-    {"capabilityRootedPath": "https://hubble.io/invoice"},
-    {"capabilityRootedPath": "https://hubble.io/invoice"}
-
+  "containingCapabilities": [
+    {
+      "id": "https://hubble.io/invoice/invoicenumbergeneration",
+      "uri": "https://hubble.io/invoice/invoicenumbergeneration",
+      "path": "https://hubble.io/invoice/invoicenumbergeneration",
+      "description": "Invoice number generation",
+      "specificationPath": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/invoicenumbergeneration.json"
+    },
+    {
+      "id": "https://hubble.io/invoice/pdfgeneration",
+      "uri": "https://hubble.io/invoice/pdfgeneration",
+      "path": "https://hubble.io/invoice/pdfgeneration",
+      "description": "PDF Generation",
+      "specificationPath": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/invoicepdfgeneration.json"
+    }
   ],
-  "securityScope": ["invoice"]
-
+  "securityScope": [
+    "invoice"
+  ]
 }

@@ -17,13 +17,13 @@
         "minLength": 1
       },
       "auth": {
-        "$ref": "#/definitions/auth"
+        "ref": "#/definitions/auth"
       },
       "headers": {
-        "$ref": "#/definitions/header"
+        "ref": "#/definitions/header"
       },
       "instrumentation": {
-        "$ref": "#/definitions/instrumentation"
+        "ref": "#/definitions/instrumentation"
       }
     }
   },
@@ -48,7 +48,7 @@
   "header": {
     "type": "array",
     "items": {
-      "$ref": "#/definitions/headerItem"
+      "ref": "#/definitions/headerItem"
     }
   },
   "headerItem": {

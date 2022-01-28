@@ -1,0 +1,87 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Invoice Number Generation",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://invoice.hubble.io/v1"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "generateInvoiceNumberRequest": {
+        "type": "object",
+        "properties": {
+          "property": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/invoicenumber": {
+      "post": {
+        "description": "Generates Invoice Number",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "seed"
+                ],
+                "properties": {
+                  "date": {
+                    "type": "string"
+                  },
+                  "prefix": {
+                    "type": "string"
+                  },
+                  "seed": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully generates a invoice number",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "invoicenumber": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ servers:
 
 components:
   schemas:
-    name:
+    generateInvoiceNumberRequest:
       type: object
       properties:
         property:
@@ -16,7 +16,7 @@ components:
 paths:
   /invoicenumber:
    post:
-      description: In
+      description: Generates Invoice Number
       requestBody:
         required: true
         content:
@@ -34,7 +34,7 @@ paths:
                   type: string
       responses:
         '200':
-          description: Successfully generated a invoice
+          description: Successfully generates a invoice number
           content:
             application/json:
               schema:

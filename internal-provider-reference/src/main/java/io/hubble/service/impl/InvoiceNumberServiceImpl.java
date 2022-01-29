@@ -3,7 +3,9 @@ package io.hubble.service.impl;
 import io.hubble.model.GenerateInvoiceNumberRequest;
 import io.hubble.model.GenerateInvoiceNumberResponse;
 import io.hubble.service.InvoiceNumberService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class InvoiceNumberServiceImpl implements InvoiceNumberService {
     private static String providerPrefix = "Provider";
     @Override

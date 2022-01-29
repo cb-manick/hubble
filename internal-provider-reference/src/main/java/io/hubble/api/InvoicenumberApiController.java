@@ -2,6 +2,7 @@ package io.hubble.api;
 
 import io.hubble.model.GenerateInvoiceNumberRequest;
 import io.hubble.model.GenerateInvoiceNumberResponse;
+import io.hubble.service.InvoiceNumberService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,10 +14,11 @@ import java.util.Optional;
 public class InvoicenumberApiController implements InvoicenumberApi {
 
     private final NativeWebRequest request;
-
+    private final InvoiceNumberService service;
     @org.springframework.beans.factory.annotation.Autowired
-    public InvoicenumberApiController(NativeWebRequest request) {
+    public InvoicenumberApiController(NativeWebRequest request, InvoiceNumberService service) {
         this.request = request;
+        this.service = service;
     }
 
     @Override
@@ -26,7 +28,8 @@ public class InvoicenumberApiController implements InvoicenumberApi {
 
     @Override
     public ResponseEntity<GenerateInvoiceNumberResponse> generateInvoiceNumber(GenerateInvoiceNumberRequest request){
-        return null;
+        GenerateInvoiceNumberResponse response = service.generateInvoiceNumber(request);
+        return ResponseEntity.ok(response);
     }
 
 }

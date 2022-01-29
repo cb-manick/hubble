@@ -1,5 +1,8 @@
 package io.hubble.api;
 
+import io.hubble.model.GenerateInvoiceNumberRequest;
+import io.hubble.model.GenerateInvoiceNumberResponse;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -19,6 +22,11 @@ public class InvoicenumberApiController implements InvoicenumberApi {
     @Override
     public Optional<NativeWebRequest> getRequest() {
         return Optional.ofNullable(request);
+    }
+
+    @Override
+    public ResponseEntity<GenerateInvoiceNumberResponse> generateInvoiceNumber(GenerateInvoiceNumberRequest request){
+        return null;
     }
 
 }

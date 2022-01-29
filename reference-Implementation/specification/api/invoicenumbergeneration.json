@@ -9,42 +9,17 @@
       "url": "https://invoice.hubble.io/v1"
     }
   ],
-  "components": {
-    "schemas": {
-      "generateInvoiceNumberRequest": {
-        "type": "object",
-        "properties": {
-          "property": {
-            "type": "integer"
-          }
-        }
-      }
-    }
-  },
   "paths": {
     "/invoicenumber": {
       "post": {
-        "description": "Generates Invoice Number",
+        "operationId": "Generate-Invoice-Number",
+        "description": "Generates Invoice Number Request",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "seed"
-                ],
-                "properties": {
-                  "date": {
-                    "type": "string"
-                  },
-                  "prefix": {
-                    "type": "string"
-                  },
-                  "seed": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schema/generateInvoiceNumberRequest"
               }
             }
           }
@@ -54,14 +29,7 @@
             "description": "Successfully generates a invoice number",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "invoicenumber": {
-                      "type": "string"
-                    }
-                  }
-                }
+                "schema": "$ref:'/components/schema/generateInvoiceNumberResponse'"
               }
             }
           },
@@ -69,16 +37,49 @@
             "description": "Invalid request",
             "content": {
               "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    }
-                  }
-                }
+                "schema": "$ref:'/components/schema/generateErrorNumberResponse'"
               }
             }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "generateInvoiceNumberRequest": {
+        "title": "Generate Invoice Number Request",
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "example": 1643434140000
+          },
+          "prefix": {
+            "type": "string",
+            "example": "merch"
+          },
+          "seed": {
+            "type": "string",
+            "example": 20
+          }
+        }
+      },
+      "generateInvoiceNumberResponse": {
+        "title": "Generate Invoice Number Response",
+        "type": "object",
+        "properties": {
+          "invoicenumber": {
+            "type": "string"
+          }
+        }
+      },
+      "generateErrorNumberResponse": {
+        "type": "object",
+        "title": "Error Response for Generate Invoice Number",
+        "properties": {
+          "message": {
+            "type": "string"
           }
         }
       }

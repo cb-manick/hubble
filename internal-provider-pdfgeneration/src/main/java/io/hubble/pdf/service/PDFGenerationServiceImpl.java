@@ -27,11 +27,12 @@ public class PDFGenerationServiceImpl implements PDFGenerationService {
   }
 
   @Bean
-  public Consumer<GeneratePdf> generatePdf(){
-    return generatePdf -> logger.info("message received");
+  public Consumer<GeneratePdf> generatePdf() {
+    return generatePdf -> {
+      logger.info("Received Message " + generatePdf);
+      logger.info(generatePdf.toString());
+    };
   }
-
-
 
 //  @Bean
 //  public Supplier<PdfGenerated> pdfGenerated() {

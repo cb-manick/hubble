@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
 import java.util.UUID;
-import java.util.function.Consumer;
+import java.util.function.Function;
 
 @Service
 public class PDFGenerationServiceImpl implements PDFGenerationService {
@@ -27,10 +27,11 @@ public class PDFGenerationServiceImpl implements PDFGenerationService {
   }
 
   @Bean
-  public Consumer<GeneratePdf> generatePdf() {
+  public Function<GeneratePdf,PdfGenerated> generatePdf() {
     return generatePdf -> {
       logger.info("Received Message " + generatePdf);
       logger.info(generatePdf.toString());
+      return this.generatePdf(generatePdf);
     };
   }
 

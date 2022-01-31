@@ -6,6 +6,8 @@ spring:
       bindings:
         generatePDF-in-0:
           destination: generatePDF
+        generatePDF-out-0:
+          destination: pdfGenerated
 #        pdfGenerated-out-0:
 #          destination: invoice.pdfGenerated
 #        health-out-0:

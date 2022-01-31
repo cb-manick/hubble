@@ -6,7 +6,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.util.function.Consumer;
 
 @SpringBootApplication
 
@@ -24,11 +27,11 @@ public class Application {
   }
 
 
-//  @Bean
-//  public Consumer<GeneratePdf> generatePdf(){
-//    return generatePdf -> {
-//      logger.info("Received Message " + generatePdf);
-//      logger.info(generatePdf.toString());
-//    };
-//  }
+  @Bean
+  public Consumer<GeneratePdf> generatePdf(){
+    return generatePdf -> {
+      logger.info("Received Message " + generatePdf);
+      logger.info(generatePdf.toString());
+    };
+  }
 }

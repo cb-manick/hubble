@@ -1,8 +1,8 @@
-io/hubble/config/RabbitMQCofig.class
 io/hubble/pdf/model/PdfGenerated.class
 io/hubble/pdf/service/PDFGenerationServiceImpl.class
 io/hubble/pdf/service/PDFGenerationService.class
 io/hubble/pdf/infra/InfraActors.class
 io/hubble/pdf/model/GeneratePdf.class
+io/hubble/config/RabbitMQConfig.class
 io/hubble/pdf/model/HealthPayload.class
 io/hubble/Application.class

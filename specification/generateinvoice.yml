@@ -85,8 +85,8 @@ components:
     generatePDF:
       type: object
       properties:
-        lumens:
-          type: integer
+        invoiceid:
+          type: string
           minimum: 0
           description: Invoice Generation.
         sentAt:

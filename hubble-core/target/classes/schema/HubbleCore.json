@@ -1,0 +1,45 @@
+{
+  "$id": "https://hubble.io/schemas/0.1/hubblecontext.json",
+  "$schema": "http://json-schema.org/draft-01/schema#",
+  "description": "Hubble Context Models",
+  "type": "object",
+  "properties": {
+    "tenantContext": {
+      "type": "string",
+      "description": "Tenant Context Identifier",
+      "minLength": 1,
+      "format": "uri"
+    },
+    "capabilityContext" : {
+      "$ref": "#/definitions/CapabilityContext"
+    }
+  },
+  "definitions": {
+    "CapabilityContext" : {
+      "type": "object",
+      "properties": {
+        "capabilityIdentifier": {
+          "type": "string",
+          "description": "Unique Uri of the capability",
+          "format": "uri"
+        },
+        "operationId": {
+          "type": "string",
+          "description": "Operation Id that is invoked in the capability",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "description": "Version for capability"
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

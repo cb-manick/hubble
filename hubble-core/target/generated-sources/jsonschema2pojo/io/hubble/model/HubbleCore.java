@@ -1,11 +1,9 @@
 
 package io.hubble.model;
 
-import java.net.URI;
 import javax.annotation.processing.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
@@ -21,31 +19,18 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @Generated("jsonschema2pojo")
 public class HubbleCore {
 
-    /**
-     * Tenant Context Identifier
-     * 
-     */
     @JsonProperty("tenantContext")
-    @JsonPropertyDescription("Tenant Context Identifier")
-    private URI tenantContext;
+    private TenantContext tenantContext;
     @JsonProperty("capabilityContext")
     private CapabilityContext capabilityContext;
 
-    /**
-     * Tenant Context Identifier
-     * 
-     */
     @JsonProperty("tenantContext")
-    public URI getTenantContext() {
+    public TenantContext getTenantContext() {
         return tenantContext;
     }
 
-    /**
-     * Tenant Context Identifier
-     * 
-     */
     @JsonProperty("tenantContext")
-    public void setTenantContext(URI tenantContext) {
+    public void setTenantContext(TenantContext tenantContext) {
         this.tenantContext = tenantContext;
     }
 

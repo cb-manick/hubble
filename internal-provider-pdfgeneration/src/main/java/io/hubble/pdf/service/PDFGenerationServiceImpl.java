@@ -4,6 +4,8 @@ import io.hubble.pdf.model.GeneratePdf;
 import io.hubble.pdf.model.PdfGenerated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ import java.util.function.Function;
 @Service
 public class PDFGenerationServiceImpl implements PDFGenerationService {
   private static final Logger logger = LoggerFactory.getLogger(PDFGenerationServiceImpl.class);
+
+  @Autowired
+  private StreamBridge streamBridge;
 
   @Override
   public PdfGenerated generatePdf(GeneratePdf generatePdf) {

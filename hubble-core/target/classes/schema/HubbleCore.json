@@ -5,10 +5,7 @@
   "type": "object",
   "properties": {
     "tenantContext": {
-      "type": "string",
-      "description": "Tenant Context Identifier",
-      "minLength": 1,
-      "format": "uri"
+     "$ref": "#/definitions/TenantContext"
     },
     "capabilityContext" : {
       "$ref": "#/definitions/CapabilityContext"
@@ -31,6 +28,19 @@
         "version": {
           "type": "string",
           "description": "Version for capability"
+        }
+      }
+    },
+    "TenantContext": {
+      "type": "object",
+      "properties": {
+        "tenantId": {
+          "type": "string",
+          "description": "Tenant Id "
+        },
+        "entityId": {
+          "type": "string",
+          "description": "Entity Id"
         }
       }
     }

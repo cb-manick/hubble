@@ -22,4 +22,5 @@ func main() {
 	event.SetDataContentType("")
 	fmt.Println(event)
 	fmt.Println(hubbleTypes.RegisteredCapabilitiesData)
+	fmt.Println(hubbleTypes.RegisteredProviderData)
 }

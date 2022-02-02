@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	hubbleTypes "hubble-connect/pkg/types"
 	"time"
-	"types"
 )
 import cloudevents "github.com/cloudevents/sdk-go/v2"
 
@@ -21,4 +21,5 @@ func main() {
 	})
 	event.SetDataContentType("")
 	fmt.Println(event)
+	fmt.Println(hubbleTypes.RegisteredCapabilitiesData)
 }

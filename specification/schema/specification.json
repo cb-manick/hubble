@@ -10,6 +10,10 @@
       "minLength": 1,
       "format": "uri"
     },
+    "capabilityContext": {
+      "type": "string",
+      "description": "Name of the context under which all capability extension happens"
+    },
     "path": {
       "type": "string",
       "description": "Capability Definition Path",
@@ -39,10 +43,36 @@
     "securityScope": {
       "$ref": "securityspecification.json#/security"
     },
-    "containingCapabilities": {
+    "subCapabilities": {
       "$ref": "#/definitions/containingCapabilities"
     }
   },
+  "oneOf": [
+    {
+      "required": [
+        "id",
+        "capabilityContext",
+        "path",
+        "version",
+        "endpoints",
+        "overridingType",
+        "providerSelection",
+        "securityScope"
+      ]
+    },
+    {
+      "required": [
+        "id",
+        "capabilityContext",
+        "path",
+        "version",
+        "endpoints",
+        "overridingType",
+        "providerSelection",
+        "subCapabilities"
+      ]
+    }
+  ],
   "definitions": {
     "containingCapabilities": {
       "type": "array",
@@ -65,10 +95,6 @@
           "type": "string",
           "format": "uri"
         },
-        "path": {
-          "type": "string",
-          "format": "uri"
-        },
         "description": {
           "type": "string",
           "description": "Description of the capability"
@@ -81,10 +107,3 @@
     }
   }
 }
-
-
-
-
-
-
-

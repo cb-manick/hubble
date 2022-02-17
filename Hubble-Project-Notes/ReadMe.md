@@ -129,6 +129,9 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 </p>
 
+# Misc #
+https://drive.google.com/file/d/1kbp9bVRdoR1LKZusq38WqN8t4tf9wiO6/view?usp=sharing
+Draw.io diagram
 # Plan Of Attack - RoadMap #
 
 

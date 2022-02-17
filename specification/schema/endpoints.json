@@ -29,6 +29,11 @@
     "endpoint": {
       "type": "object",
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique endpoint id",
+          "minLength": 1
+        },
         "name": {
           "type": "string",
           "description": "Unique function name",

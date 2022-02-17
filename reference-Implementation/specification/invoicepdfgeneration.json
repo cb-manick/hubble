@@ -1,0 +1,32 @@
+{
+  "$schema": "https://github.com/cb-manick/hubble/blob/master/specification/schema/specification.json",
+  "version": "0.0.0.1",
+  "capabilityContext": "invoice",
+  "id": "4de73eab-0839-40a7-b108-1173b41e233a",
+  "uri": "https://hubble.io/invoice/pdfGeneration",
+  "path": "https://hubble.io/invoice/pdfGeneration",
+  "endpoints": [
+    {
+      "name": "generatePdfCommand",
+      "operation": "https://huble.io/generateinvoice.yml#invoice.generatePDF",
+      "type": "asyncapi",
+      "mustImplement": "true"
+    },
+    {
+      "name": "generatePdfNotification",
+      "operation": "https://huble.io/generateinvoice.yml#invoice.pdfGenerated",
+      "type": "asyncapi",
+      "mustImplement": "true"
+    },
+    {
+      "name": "generatePdfHealth",
+      "operation": "https://huble.io/generateinvoice.yml#invoice.generatePdf.health",
+      "type": "asyncapi",
+      "mustImplement": "true"
+    }
+  ],
+  "overridingType": "single",
+  "providerSelection": "Priority",
+  "securityScope": ["invoice"]
+
+}

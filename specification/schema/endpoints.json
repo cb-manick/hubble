@@ -55,7 +55,7 @@
         },
         "mustImplement": {
           "type": "boolean",
-          "description": "Indicates whether this endpoint must be overriden or not.",
+          "description": "Indicates whether this endpoint must be over-ridden or not.",
           "default": true
         }
       },

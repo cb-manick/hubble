@@ -1,25 +1,28 @@
 {
   "$schema": "https://github.com/cb-manick/hubble/blob/master/specification/schema/specification.json",
   "version": "0.0.0.1",
-  "id": "https://hubble.io/invoice",
+  "capabilityContext": "invoice",
+  "id": "1641e436-0196-42ec-bcc3-a68853672c70",
   "uri": "https://hubble.io/invoice",
   "path": "https://hubble.io/invoice",
   "overridingType": "single",
   "providerSelection": "Priority",
-  "containingCapabilities": [
+  "subCapabilities": [
     {
-      "id": "https://hubble.io/invoice/invoicenumbergeneration",
+      "id": "82133e40-a9a1-4148-a57f-570612c97558",
       "uri": "https://hubble.io/invoice/invoicenumbergeneration",
       "path": "https://hubble.io/invoice/invoicenumbergeneration",
       "description": "Invoice number generation",
-      "specificationPath": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/invoicenumbergeneration.json"
+      "specificationPath": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/invoicenumbergeneration.json",
+      "mustImplement": true
     },
     {
-      "id": "https://hubble.io/invoice/pdfgeneration",
+      "id": "4de73eab-0839-40a7-b108-1173b41e233a",
       "uri": "https://hubble.io/invoice/pdfgeneration",
       "path": "https://hubble.io/invoice/pdfgeneration",
       "description": "PDF Generation",
-      "specificationPath": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/invoicepdfgeneration.json"
+      "specificationPath": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/invoicepdfgeneration.json",
+      "mustImplement": true
     }
   ],
   "securityScope": [

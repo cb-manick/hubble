@@ -7,8 +7,7 @@
     "id": {
       "type": "string",
       "description": "Capability Specification unique identifier",
-      "minLength": 1,
-      "format": "uri"
+      "minLength": 1
     },
     "capabilityContext": {
       "type": "string",
@@ -89,7 +88,7 @@
       "properties": {
         "id": {
           "type": "string",
-          "format": "uri"
+          "minLength": 1
         },
         "path": {
           "type": "string",
@@ -102,7 +101,13 @@
         "specificationPath": {
           "type": "string",
           "description": "Specification Description Path"
+        },
+        "mustImplement": {
+          "type": "boolean",
+          "description": "Indicates whether this endpoint must be over-ridden or not.",
+          "default": true
         }
+
       }
     }
   }

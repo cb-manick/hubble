@@ -7,18 +7,21 @@
   "path": "https://hubble.io/invoice/pdfGeneration",
   "endpoints": [
     {
+      "id": "2d97278a-f330-4d78-a988-2813e3735cd9",
       "name": "generatePdfCommand",
       "operation": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/api/invoicenumbergeneration.json#invoice.generatePDF",
       "type": "asyncapi",
       "mustImplement": "true"
     },
     {
+      "id": "740d093d-dc7e-4ede-8ee2-ac6edb17ab36",
       "name": "generatePdfNotification",
       "operation": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/api/invoicenumbergeneration.json#invoice.pdfGenerated",
       "type": "asyncapi",
       "mustImplement": "true"
     },
     {
+      "id": "b437eeb9-506d-42df-a889-d76ae60132ca",
       "name": "generatePdfHealth",
       "operation": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/api/invoicenumbergeneration.json#invoice.generatePdf.health",
       "type": "asyncapi",

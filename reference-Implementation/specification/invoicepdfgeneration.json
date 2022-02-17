@@ -8,19 +8,19 @@
   "endpoints": [
     {
       "name": "generatePdfCommand",
-      "operation": "https://huble.io/generateinvoice.yml#invoice.generatePDF",
+      "operation": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/api/invoicenumbergeneration.json#invoice.generatePDF",
       "type": "asyncapi",
       "mustImplement": "true"
     },
     {
       "name": "generatePdfNotification",
-      "operation": "https://huble.io/generateinvoice.yml#invoice.pdfGenerated",
+      "operation": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/api/invoicenumbergeneration.json#invoice.pdfGenerated",
       "type": "asyncapi",
       "mustImplement": "true"
     },
     {
       "name": "generatePdfHealth",
-      "operation": "https://huble.io/generateinvoice.yml#invoice.generatePdf.health",
+      "operation": "https://github.com/cb-manick/hubble/blob/master/reference-Implementation/specification/api/invoicenumbergeneration.json#invoice.generatePdf.health",
       "type": "asyncapi",
       "mustImplement": "true"
     }

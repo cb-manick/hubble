@@ -31,5 +31,18 @@ public interface HubbleClient extends AutoCloseable {
      */
     void publishEvent(PublishEventRequest request);
 
+    /***
+     * Invoke Client Method
+     * @param appId
+     * @param methodName
+     * @param data
+     * @param httpExtension
+     * @param metadata
+     * @param <T>
+     * @return
+     */
+    <T> T invokeMethod(String appId, String methodName, Object data, HttpExtension httpExtension,
+                             Map<String, String> metadata);
+
 
 }

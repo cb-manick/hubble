@@ -25,15 +25,17 @@ public class PublishEventRequest {
         return contentType;
     }
 
-    public void setContentType(String contentType) {
+    public PublishEventRequest setContentType(String contentType) {
         this.contentType = contentType;
+        return this;
     }
 
     public Map<String, String> getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Map<String, String> metadata) {
+    public PublishEventRequest setMetadata(Map<String, String> metadata) {
         this.metadata = Collections.unmodifiableMap(metadata);
+        return this;
     }
 }

@@ -21,7 +21,7 @@ public class AbstractHubbleClient implements HubbleClient{
     }
 
     @Override
-    public <T> T invokeMethod(String appId, String methodName, Object data, HttpExtension httpExtension, Map<String, String> metadata) {
+    public <T> T invokeMethod(String capabilityId,TenantContext tenantContext, String methodName, Object data, HttpExtension httpExtension, Map<String, String> metadata) {
         return null;
     }
 

@@ -7,6 +7,22 @@ public class CallingContext {
     private String capabilityId;
     private String operationName;
 
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
+    public void setMerchantId(String merchantId) {
+        this.merchantId = merchantId;
+    }
+
+    public void setCapabilityId(String capabilityId) {
+        this.capabilityId = capabilityId;
+    }
+
+    public void setOperationName(String operationName) {
+        this.operationName = operationName;
+    }
+
     public CallingContext(String entityId, String merchantId, String capabilityId, String operationName){
         this.entityId = entityId;
         this.merchantId = merchantId;
@@ -18,8 +34,6 @@ public class CallingContext {
         return entityId;
     }
 
-    public void setEntityId(String entityId) {
-        this.entityId = entityId;
-    }
+
 
 }

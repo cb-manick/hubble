@@ -1,0 +1,6 @@
+com/chargebee/hubble/client/HttpExtension.class
+com/chargebee/hubble/client/HubbleClient.class
+com/chargebee/hubble/client/AbstractHubbleClient.class
+com/chargebee/hubble/model/CallingContext.class
+com/chargebee/hubble/client/HubbleHttp.class
+com/chargebee/hubble/model/PublishEventRequest.class

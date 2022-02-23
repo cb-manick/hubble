@@ -7,6 +7,10 @@ import java.util.Map;
 
 public class HttpBinding implements OutputBinding {
     private Map<String,String> metadata;
+    private static final String FORMATTED_PATH = "PATH";
+    private static final String FORMATTED_QUERY = "QUERY";
+    private static final String HOST = "HOST";
+
     public HttpBinding() {
 
     }
@@ -17,7 +21,9 @@ public class HttpBinding implements OutputBinding {
 
     @Override
     public InvokeResponse invoke(InvokeRequest invokeRequest) {
-       return null;
+        byte[] data = invokeRequest.getData();
+
+        return null;
     }
 
     @Override

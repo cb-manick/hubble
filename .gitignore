@@ -2,3 +2,4 @@
 /.vscode/
 /hubble-sdk/target/
 /hubble-sdk/target/classes/
+/internal-provider-pdfgeneration/target/

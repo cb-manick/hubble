@@ -5,6 +5,6 @@ import java.util.Map;
 
 public interface OutputBinding {
   void init(Map<String,String> metadata);
-  byte[] invoke(InvokeRequest invokeRequest);
+  InvokeResponse invoke(InvokeRequest invokeRequest);
   List<String> getOperations();
 }

@@ -25,6 +25,4 @@ public class InvokeRequest {
   public String getOperation() {
     return operation;
   }
-
-
 }

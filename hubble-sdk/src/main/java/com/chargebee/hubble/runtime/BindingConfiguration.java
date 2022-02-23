@@ -1,8 +1,9 @@
 package com.chargebee.hubble.runtime;
 
+import com.chargebee.hubble.runtime.config.BindingConfigElement;
+
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 public class BindingConfiguration {
 

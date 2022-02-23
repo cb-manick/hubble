@@ -5,13 +5,13 @@ import com.chargebee.hubble.runtime.*;
 import java.util.List;
 import java.util.Map;
 
-public class HttpBinding implements OutputBinding {
+public class HttpOutputBinding implements OutputBinding {
     private Map<String,String> metadata;
     private static final String FORMATTED_PATH = "PATH";
     private static final String FORMATTED_QUERY = "QUERY";
     private static final String HOST = "HOST";
 
-    public HttpBinding() {
+    public HttpOutputBinding() {
 
     }
     @Override
@@ -31,8 +31,4 @@ public class HttpBinding implements OutputBinding {
         return null;
     }
 
-    @Override
-    public void read(EventListener eventListener) {
-
-    }
 }

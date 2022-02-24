@@ -21,7 +21,7 @@ public class HttpOutputBinding implements OutputBinding {
 
     @Override
     public InvokeResponse invoke(InvokeRequest invokeRequest) {
-        byte[] data = invokeRequest.getData();
+        byte[] payload = invokeRequest.getData();
 
         return null;
     }

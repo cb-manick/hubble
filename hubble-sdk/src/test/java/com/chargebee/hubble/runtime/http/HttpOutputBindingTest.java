@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HttpOutputBindingTest {
 
+    private static final String PATHPREFIX = "p_";
+
     @Test
     public void constructionTest(){
         HttpOutputBinding httpOutputBinding = new HttpOutputBinding();
@@ -28,6 +30,7 @@ public class HttpOutputBindingTest {
         httpOutputBinding.init(metaData);
         Map<String,String> invocationMetaData = new HashMap<>();
         InvokeRequest request = new InvokeRequest(null,invocationMetaData,"operation1");
+
         Assertions.assertNotNull(request);
     }
 }

@@ -12,6 +12,7 @@ public class InvokeRequest {
     this.data = data;
     this.metadata = metadata;
     this.operation = operation;
+
   }
 
   public byte[] getData() {

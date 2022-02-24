@@ -28,6 +28,6 @@ public class HttpOutputBindingTest {
         httpOutputBinding.init(metaData);
         Map<String,String> invocationMetaData = new HashMap<>();
         InvokeRequest request = new InvokeRequest(null,invocationMetaData,"operation1");
-
+        Assertions.assertNotNull(request);
     }
 }

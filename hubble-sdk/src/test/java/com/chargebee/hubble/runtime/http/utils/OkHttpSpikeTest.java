@@ -5,7 +5,6 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Response;
 import org.junit.Test;
 import com.squareup.okhttp.Request;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import java.io.IOException;
 
@@ -23,6 +22,8 @@ public class OkHttpSpikeTest {
         Response response = null;
         try {
             response = call.execute();
+           System.out.println(response.body().string());
+       //    System.out.println(response.body().bytes().length);
         } catch (IOException e) {
             e.printStackTrace();
         }

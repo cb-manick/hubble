@@ -1,11 +1,14 @@
 package com.chargebee.hubble.runtime.http;
 
 import com.chargebee.hubble.runtime.*;
+import com.chargebee.hubble.runtime.http.utils.HeadersToMetaData;
 import com.chargebee.hubble.runtime.http.utils.HttpMetaData;
 import com.chargebee.hubble.runtime.http.utils.HttpMetaDataParser;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -38,6 +41,15 @@ public class HttpOutputBinding implements OutputBinding {
   }
 
   public InvokeResponse invoke(Request request,byte[] payload, HttpMetaData metaData, String operation) {
+    InvokeResponse invokeResponse;
+    try {
+      Response response = client.newCall(request).execute();
+     Map<String,String> responseMetaData = HeadersToMetaData.getMetaData(response.headers());
+      byte[] bytes = response.body().bytes();
+      return new InvokeResponse(bytes,responseMetaData,"");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     return null;
   }
 

@@ -27,10 +27,13 @@ public class HttpOutputBindingTest {
         HttpOutputBinding httpOutputBinding = new HttpOutputBinding();
         Map<String,String> metaData = new HashMap<>();
         metaData.put("host","http://localhost:8081/") ;
+        metaData.put("basePath","");
         httpOutputBinding.init(metaData);
         Map<String,String> invocationMetaData = new HashMap<>();
         InvokeRequest request = new InvokeRequest(null,invocationMetaData,"operation1");
 
         Assertions.assertNotNull(request);
     }
+
+
 }

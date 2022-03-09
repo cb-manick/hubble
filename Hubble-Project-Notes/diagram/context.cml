@@ -1,39 +1,247 @@
-
+    
 ContextMap ContextMapper {
-	contains SpecificationDSL,SchemaRegistry,SpecificationSDK,Certification,SpecificationRepository,Provider,MerchantCapabilityManagement
-    SchemaRegistry [PL] -> [CF] SpecificationDSL    
-    SpecificationDSL [PL] ->[CF] SpecificationSDK
-    SpecificationRepository [PL,OHS] -> [ACL] Certification
-    SpecificationSDK [PL] -> [CF] Certification
-    Certification [PL,OHS] -> Provider
-    Provider [PL,OHS] -> MerchantCapabilityManagement
-	/**
-	 * Pattern selection:
-	 * ==================
-	 * 
-	 * The language core (CML language) provides a Published Language (PL) allowing to describe software systems
-	 * in terms of DDD patterns. This PL is used by the other components. Since its not a public API (REST, Messaging, 
-	 * or similar) we haven't added the Open Host Service (OHS) pattern.
-	 * 
-	 * 
-	 * The discovery library conforms to the model provided by the language core (we always generate CML models
-	 * according to the core). The generators and on the other hand may also influence the language sometimes.
-	 * The core further uses the API of our Service Cutter library to generate new decompositions.
-	 */
-	
+    type SYSTEM_LANDSCAPE
+    state TO_BE
+    contains SpecificationDSL
+    contains SpecificationRepository
+    contains ProviderManagement
+    contains MerchantCapabilityManagement
+    contains MerchantProcessManagement
+    contains CertificationDSL
+    contains ProvidingCapabilityCertification
+    contains MarketPlace
+    contains Billing
+    contains HostedProvider
+    contains RuntimeSecurity
+    contains Platform
 
-	/* The refactorings are tightly coupled with the language. In this case the semantic model of the language
-	 * can be seen as a Shared Kernel:
-	 */
-	
+    SpecificationRepository [U, PL, OHS] -> [D, ACL] MerchantCapabilityManagement {
+        implementationTechnology = "RESTful HTTP"
+        downstreamRights = INFLUENCER
+        exposedAggregates = ApiSpec, CapabilitySpecification, CertificationSpecification
+    }
+
+    SpecificationRepository [U, PL, OHS] -> [D, ACL] ProvidingCapabilityCertification {
+        implementationTechnology = "RESTful HTTP"
+        downstreamRights = INFLUENCER
+        exposedAggregates = ApiSpec, CapabilitySpecification, CertificationSpecification
+    }
+
+    CertificationDSL[P] <-> [P]SpecificationDSL {
+        implementationTechnology="JSON Schema"
+    }
+
+    ProvidingCapabilityCertification [U, PL, OHS] -> [D, ACL]ProviderManagement {
+        implementationTechnology = "RESTful Http"
+    }
+
+    ProviderManagement [U, PL, OHS] -> [D, ACL] MerchantCapabilityManagement {
+        implementationTechnology = "RESTful Http"
+    }
+
+    MarketPlace[S]-> [C] MerchantCapabilityManagement {
+        implementationTechnology = "RESTful Http"
+    }
+
+    MerchantCapabilityManagement[C] <- [S] Billing
+
+    HostedProvider[U, PL] -> [D, ACL] ProviderManagement
+    MerchantProcessManagement[C] <- [S] Platform {
+        implementationTechnology = "Transparent Network Proxy"
+    } 
+    MerchantProcessManagement[P] <-> [P] MerchantCapabilityManagement {
+        implementationTechnology = "Restful Http"
+    }
+    MerchantProcessManagement [C] <- [S] RuntimeSecurity {
+        implementationTechnology = "Event based "
+    }
+}
+
+BoundedContext MerchantProcessManagement {
+    Module processdefinition {
+        basePackage = org.chargebee.hubble.processdefinition.basemodel
+        Aggregate MerchantProcessDefintion {
+            Entity MerchantProcessDefinition
+            ValueObject UsedCapabilities
+        }
+    }
+}
+
+BoundedContext SpecificationDSL {
+    Module specificationDsl {
+        basePackage = org.chargebee.hubble.specificationdel.basemodel
+        Aggregate SpecificationDSL {
+            Entity SpecificationDSL
+            ValueObject SpecificationDSLVersion
+        }
+    }
+}
+
+BoundedContext CertificationDSL {
+    Module certificationDsl {
+        basePackage = org.chargebee.hubble.CertificationDSL.basemodel
+        Aggregate CertificationDSL {
+            Entity CertificationDSL
+            ValueObject CertificationDSLVersion
+            ValueObject ReferedSpecificationDSL
+            ValueObject Scenarios
+        }
+    }
+}
+
+BoundedContext SpecificationRepository {
+    Module specification {
+        basePackage = org.chargebee.hubble.schemaregistry.basemodel
+        Aggregate ApiSpec {
+            Entity ApiSpec
+            ValueObject SpecificationVersion
+            ValueObject Capability
+        }
+    }
+    Module Specification {
+        basePackage = org.chargebee.hubble.CertificationDSL.basemodel
+        Aggregate CapabilitySpecification {
+            Entity CapabilitySpecification
+            ValueObject CapabilityId
+            ValueObject CapabilityContext
+            ValueObject CapabilityPath
+        }
+        Aggregate CertificationSpecification {
+            Entity CertificationSpecification
+            ValueObject ReferenceCapabilitySpecification
+        }
+    }
+}
+
+BoundedContext MerchantCapabilityManagement {
+    Module MerchantCapabilityManagement {
+        basePackage = org.chargebee.hubble.MerchantCapabilityManagment
+        Aggregate MerchantEnabledCapability {
+            Entity MerchantEnabledCapability
+        }
+        Aggregate MerchantFullfillingProvider {
+            Entity MerchantFullfillingProvider
+            ValueObject MerchantProviderConfiguration
+            ValueObject  MerchantCapabilityContext
+            ValueObject  MerchantCapabilityUrn
+        }
+        Aggregate ProviderSelectionCritieria {
+            Entity ProviderSelectionCritieria
+            ValueObject ApplicableCapabilityScope
+        }
+        Aggregate AvailableCapability {
+            Entity AvailableCapability
+        }
+    }
+}
+
+BoundedContext ProvidingCapabilityCertification implements ProviderCertificationTools {
+}
+
+BoundedContext ProviderManagement {
+    Module ProviderManagement{
+        basePackage = org.chargebee.hubble.ProviderManagement.Provider
+        Aggregate Provider {
+            Entity Provider
+        }
+        Aggregate ProviderUser {
+            Entity ProviderUser
+        }
+    }
+    Module ProvidingCapability {
+        basePackage = org.chargebee.hubble.ProviderManagement.Provider
+        Aggregate ProvidingCapability {
+            Entity ProvidingCapability
+            ValueObject ProvidingCapabilityVersion
+            ValueObject ProvidingCapabilityDetails
+        }
+    }
+}
+
+BoundedContext HostedProvider implements ProviderHosting {
+}
+
+BoundedContext Platform implements ProviderTargeting  {
+
+}
+
+BoundedContext MarketPlace{
+    Aggregate Apps {
+    }
+    Aggregate AppOwnership {
+    }
+}
+
+BoundedContext RuntimeSecurity implements ProviderRuntimeSecurity{
+}
+
+BoundedContext Billing implements MerchantProviderBilling {
+}
+
+Domain Sandbox {
+    Subdomain Enviroment {
+
+    }
+    
+}
+
+Domain  MerchantProviderBilling {
+}
+
+Domain ProviderCertificationTools {
+     Subdomain ProviderFunctionalTests {
+         Entity FunctionalTestScore
+    }
+    Subdomain SyntacticValidationTests{
+        Entity SyntacticTestScore
+    }
+    Subdomain MinimalValidationTests{
+         Entity MinimalValidationTestScore
+    }
+}
+
+Domain ProviderRuntimeSecurity {
+    Subdomain ProviderMonitoring {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Monitors Provider for health ."
+    }
+
+}
+
+Domain ProviderHosting {
+    domainVisionStatement = "Provides infra for hosting providers ."
+  Subdomain ProviderBundle {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Deployment Bundle."
+        Entity ProviderBundle {
+            String deploymentBundleUrl
+            String familyname
+        }
+    }
+
+    Subdomain ProviderHostedBilling {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Billing Provider for hosting charges."
+    }
+
+/* Add more subdomains ... */
 }
 
 
+Domain ProviderTargeting {
+    Subdomain ServiceChaining {
 
-BoundedContext SchemaRegistry
-BoundedContext SpecificationDSL
-BoundedContext SpecificationRepository
-BoundedContext SpecificationSDK
-BoundedContext MerchantCapabilityManagement
-BoundedContext Certification
-BoundedContext Provider
+    }
+    Subdomain EventTargeting {
+
+    }
+    Subdomain InvocationTargeting {
+
+    }
+    Subdomain EventProxy {
+
+    }
+    Subdomain InvocationProxy{
+        
+    }
+}

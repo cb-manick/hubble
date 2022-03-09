@@ -1,6 +1,7 @@
 package com.chargebee.hubble.runtime.http;
 
 import com.chargebee.hubble.runtime.InvokeRequest;
+import com.chargebee.hubble.runtime.InvokeResponse;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -26,13 +27,14 @@ public class HttpOutputBindingTest {
     public void simpleGetTest() {
         HttpOutputBinding httpOutputBinding = new HttpOutputBinding();
         Map<String,String> metaData = new HashMap<>();
-        metaData.put("HOST","http://localhost:8081/") ;
+        metaData.put("HOST","http://localhost:8082/") ;
         metaData.put("BASE_PATH","");
         httpOutputBinding.init(metaData);
         Map<String,String> invocationMetaData = new HashMap<>();
         InvokeRequest request = new InvokeRequest(null,invocationMetaData,"operation1");
         Assertions.assertNotNull(request);
-        Assertions.assertNull(httpOutputBinding.invoke(request));
+        InvokeResponse response = httpOutputBinding.invoke(request);
+        Assertions.assertNotNull(response);
     }
 
 

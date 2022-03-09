@@ -107,7 +107,7 @@ Hubble is aimed to make Chargebee an extensible platform with deep possible inte
 
 ![image](./images/02-hubble-context.png "Context")
 
-
+![image](./images/12-hubble-context.png "Context")
 ## Points of Delibration ##
 
 

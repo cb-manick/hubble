@@ -15,6 +15,21 @@ ContextMap ContextMapper {
     contains RuntimeSecurity
     contains Platform
     contains CapabilitySpecification
+    contains SRDF
+    contains Chaining
+
+
+    SRDF [D,ACL] <- [U,PL,OHS] SpecificationRepository {
+        implementationTechnology = "RESTFul HTTP"
+        downstreamRights = INFLUENCER
+    }
+    MerchantProcessManagement [D,ACL]<-[U,OHS] Chaining {
+
+    }
+    ProvidingCapabilityCertification[D,ACL] <- [U,OHS] SRDF {
+        implementationTechnology = "RESTFul HTTP"
+        downstreamRights = INFLUENCER
+    }
 
     SpecificationRepository [U, PL, OHS] -> [D, ACL] MerchantCapabilityManagement {
         implementationTechnology = "RESTful HTTP"
@@ -62,6 +77,17 @@ ContextMap ContextMapper {
     }
     MerchantProcessManagement [C] <- [S] RuntimeSecurity {
         implementationTechnology = "Event based "
+    }
+
+}
+
+BoundedContext Chaining {
+
+}
+
+BoundedContext SRDF {
+    Module SRDF {
+
     }
 }
 

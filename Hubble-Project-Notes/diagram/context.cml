@@ -14,11 +14,19 @@ ContextMap ContextMapper {
     contains HostedProvider
     contains RuntimeSecurity
     contains Platform
+    contains CapabilitySpecification
 
     SpecificationRepository [U, PL, OHS] -> [D, ACL] MerchantCapabilityManagement {
         implementationTechnology = "RESTful HTTP"
         downstreamRights = INFLUENCER
         exposedAggregates = ApiSpec, CapabilitySpecification, CertificationSpecification
+    }
+
+    CapabilitySpecification [D,CF] <- [U,PL] SpecificationDSL {
+        implementationTechnology = "JSON/YAML"
+    }
+     CapabilitySpecification [D,CF] <- [U,PL] CertificationDSL {
+        implementationTechnology = "JSON/YAML"
     }
 
     SpecificationRepository [U, PL, OHS] -> [D, ACL] ProvidingCapabilityCertification {
@@ -48,7 +56,7 @@ ContextMap ContextMapper {
     HostedProvider[U, PL] -> [D, ACL] ProviderManagement
     MerchantProcessManagement[C] <- [S] Platform {
         implementationTechnology = "Transparent Network Proxy"
-    } 
+    }
     MerchantProcessManagement[P] <-> [P] MerchantCapabilityManagement {
         implementationTechnology = "Restful Http"
     }
@@ -69,10 +77,19 @@ BoundedContext MerchantProcessManagement {
 
 BoundedContext SpecificationDSL {
     Module specificationDsl {
-        basePackage = org.chargebee.hubble.specificationdel.basemodel
+        basePackage = org.chargebee.hubble.specificationmodel.basemodel
         Aggregate SpecificationDSL {
             Entity SpecificationDSL
             ValueObject SpecificationDSLVersion
+        }
+    }
+}
+
+BoundedContext CapabilitySpecification {
+    Module CapabilitySpecification {
+        basePackage = org.chargebee.hubble.specificationmodel.basemodel
+        Aggregate Specification {
+
         }
     }
 }

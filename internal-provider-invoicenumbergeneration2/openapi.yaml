@@ -1,0 +1,61 @@
+openapi: 3.0.2
+info:
+  title: Invoice Number Generation
+  version: "1.0"
+servers:
+- url: https://invoice.hubble.io/v1
+paths:
+  /invoicenumber:
+    post:
+      description: Generates Invoice Number Request
+      operationId: Generate-Invoice-Number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/generateInvoiceNumberRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/generateInvoiceNumberResponse'
+          description: Successfully generates a invoice number
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/generateErrorNumberResponse'
+          description: Invalid request
+      x-contentType: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    generateInvoiceNumberRequest:
+      properties:
+        date:
+          example: "1643434140000"
+          type: string
+        prefix:
+          example: merch
+          type: string
+        seed:
+          example: "20"
+          type: string
+      title: Generate Invoice Number Request
+      type: object
+    generateInvoiceNumberResponse:
+      example:
+        invoicenumber: invoicenumber
+      properties:
+        invoicenumber:
+          type: string
+      title: Generate Invoice Number Response
+      type: object
+    generateErrorNumberResponse:
+      properties:
+        message:
+          type: string
+      title: Error Response for Generate Invoice Number
+      type: object

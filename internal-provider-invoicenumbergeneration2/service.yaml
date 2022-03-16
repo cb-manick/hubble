@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-03-16T14:16:13Z"
+  labels:
+    app: hubble
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:app: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":9082,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-03-16T14:16:13Z"
+  name: hubble
+  namespace: default
+  resourceVersion: "130418"
+  uid: 496a7acb-8333-4f12-a9e4-79fc329bed26
+spec:
+  clusterIP: 10.103.234.197
+  clusterIPs:
+  - 10.103.234.197
+  ports:
+  - name: 9082-9082
+    port: 9082
+    protocol: TCP
+    targetPort: 9082
+  selector:
+    app: hubble
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

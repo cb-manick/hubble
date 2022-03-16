@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hubble
+  name: hubble
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hubble
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hubble
+    spec:
+      containers:
+      - image: =provider2:latest
+        name: =provider2
+        resources: {}
+status: {}

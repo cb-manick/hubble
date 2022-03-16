@@ -37,10 +37,7 @@ data:
       database:
         name: documentdb
         url: "docdb-2022-01-06-05-12-54.ciba6sded7ib.us-east-2.docdb.amazonaws.com:27017"
-        db-name: serviceregistry
-        ca-file: rds-combined-ca-bundle.pem
-        user-name: SrdfUserCb
-        password: CBUser1SRDF2
+
       event-manager:
         name: nats
         url: nats://localhost:4222

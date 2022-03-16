@@ -24,7 +24,7 @@ data:
     dev:
       database:
         name: mongodb
-        url: mongodb://host.docker.internal:27017
+
         db-name: serviceregistry
       event-manager:
         name: nats

@@ -18,3 +18,10 @@ You can view the api documentation in swagger-ui by pointing to
 http://localhost:8080/
 
 Change default port value in application.properties
+
+# k8 notes
+minikube start
+kubectl get nodes
+kubectl create namespace hubble
+kubectl create service clusterip hubble --tcp=9082:9082 -o=yaml > service.yaml
+kubectl create deployment hubble --image==provider1:latest --dry-run -o=yaml> deployment.yaml

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://github.com/cb-manick/hubble/blob/master/specification/schema/specification.json",
+  "version": "0.0.0.1",
+  "capabilityContext": "invoice",
+  "id": "4de73eab-0839-40a7-b108-1173b41e233a",
+  "uri": "https://hubble.io/invoice/invoicenumbergeneration",
+  "path": "https://hubble.io/invoice/invoicenumbergeneration",
+  "endpoints": [
+    {
+      "id": "2d97278a-f330-4d78-a988-2813e3735cd9",
+      "name": "generateInvoiceNumber",
+      "operation": "https://github.com/cb-manick/hubble/blob/master/internal-provider-invoicenumbergeneration2/openapi.yaml#invoicenumber",
+      "type": "openapi",
+      "mustImplement": "true"
+    }
+  ],
+  "overridingType": "single",
+  "providerSelection": "Priority",
+  "securityScope": ["invoice"]
+
+}

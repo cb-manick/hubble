@@ -25,3 +25,8 @@ kubectl get nodes
 kubectl create namespace hubble
 kubectl create service clusterip hubble --tcp=9082:9082 -o=yaml > service.yaml
 kubectl create deployment hubble --image==provider1:latest --dry-run -o=yaml> deployment.yaml
+kubectl create -f deployment.yaml -n hubble
+kubectl create -f service.yaml -n hubble
+kubectl get all -n hubble
+kubectl logs pod/hubble -n hubble
+kubectl port-forward service/hubble 9081:9081 -n hubble 

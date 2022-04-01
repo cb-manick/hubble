@@ -30,13 +30,10 @@ metadata:
       operation: Update
       time: "2022-03-16T14:16:13Z"
   name: hubble
-  namespace: default
+  namespace: hubble
   resourceVersion: "130418"
   uid: 496a7acb-8333-4f12-a9e4-79fc329bed26
 spec:
-  clusterIP: 10.103.234.197
-  clusterIPs:
-    - 10.103.234.197
   ports:
     - name: 9081-9081
       port: 9081

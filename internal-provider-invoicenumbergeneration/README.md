@@ -29,4 +29,11 @@ kubectl create -f deployment.yaml -n hubble
 kubectl create -f service.yaml -n hubble
 kubectl get all -n hubble
 kubectl logs pod/hubble -n hubble
-kubectl port-forward service/hubble 9081:9081 -n hubble 
+kubectl port-forward service/hubble 9081:9081 -n hubble
+kubectl get deploy -n hubble
+#move images to minikube
+minikube image load imagename
+
+or 
+# Set docker env
+eval $(minikube docker-env) 

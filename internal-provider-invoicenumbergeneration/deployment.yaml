@@ -18,7 +18,7 @@ spec:
         app: hubble
     spec:
       containers:
-        - image: =provider1:latest
-          name: =provider1
+        - image: provider1:latest
+          name: provider1
           resources: {}
 status: {}

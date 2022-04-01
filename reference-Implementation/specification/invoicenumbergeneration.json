@@ -5,7 +5,7 @@
   "id": "4de73eab-0839-40a7-b108-1173b41e233a",
   "uri": "https://hubble.io/invoice/invoicenumbergeneration",
   "path": "https://hubble.io/invoice/invoicenumbergeneration",
-  "endpoints": [
+  "operations": [
     {
       "id": "2d97278a-f330-4d78-a988-2813e3735cd9",
       "name": "generateInvoiceNumber",
